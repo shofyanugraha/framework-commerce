@@ -14,11 +14,28 @@
  */
 require('spark-bootstrap');
 
+// Global Vars
+window.app = {
+    host: "",
+    methods: {
+        priceFormat: function(){
+            $('.priceformat').priceFormat({
+                prefix: 'Rp. ',
+                centsSeparator: ',',
+                centsLimit: 0,
+                thousandsSeparator: '.'
+            })
+        }
+    }
+};
 require('./components/bootstrap');
 
 // Load JS Storage
 require('../../../node_modules/js-cookie/src/js.cookie');
 require('../../../node_modules/js-storage/js.storage.min');
+
+// Load Jquery Priceformat
+require('../../../node_modules/jquery-price-format/jquery.priceformat.min.js');
 
 var app = new Vue({
     mixins: [require('spark')]

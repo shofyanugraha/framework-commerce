@@ -78,7 +78,7 @@
 
         <div class="col-md-5 col-md-offset-1">
             <div class="checkout-cart">
-                <h2><span class="bordered">Or</span>der Summary</h2>
+                <h2 class="bordered-title size-3"><span>Or</span>der Summary</h2>
                 <cart-items type="cart-checkout col-md-12"></cart-items>
                 <div class="checkout-shipping-cost">
                     <div class="pull-left">Ongkos Kirim</div>
@@ -111,7 +111,7 @@
             }
         },
 
-        ready() {}
+        mounted() {}
 
     }
 </script>

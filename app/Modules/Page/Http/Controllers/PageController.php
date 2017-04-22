@@ -15,4 +15,7 @@ class PageController extends Controller
     public function checkout(){
         return view('frontpage.campaign.checkout');
     }
+    public function cart(){
+        return view('frontpage.campaign.cart');
+    }
 }

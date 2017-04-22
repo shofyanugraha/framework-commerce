@@ -65,6 +65,6 @@
             }
         },
 
-        ready() {}
+        mounted() {}
     }
 </script>
