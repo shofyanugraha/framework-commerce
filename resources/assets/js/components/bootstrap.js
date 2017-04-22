@@ -16,3 +16,4 @@ require('./checkout/checkout');
 require('./cart-items/cart-items');
 require('./product-item/product-item');
 require('./cart-preview/cart-preview');
+require('./sales/sales');

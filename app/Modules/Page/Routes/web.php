@@ -14,3 +14,4 @@
 Route::get('/', 'PageController@index');
 Route::get('/checkout', 'PageController@checkout');
 Route::get('/cart', 'PageController@cart');
+Route::get('/sales', 'PageController@sales');

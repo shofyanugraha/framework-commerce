@@ -18,4 +18,7 @@ class PageController extends Controller
     public function cart(){
         return view('frontpage.campaign.cart');
     }
+    public function sales(){
+        return view('frontpage.campaign.sales');
+    }
 }
