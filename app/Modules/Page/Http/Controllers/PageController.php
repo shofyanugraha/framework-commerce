@@ -9,7 +9,10 @@ use App\Http\Controllers\Controller;
 
 class PageController extends Controller
 {
-    public function home() {
-    	return view('page::home');
+    public function index(){
+        return view('frontpage.home.home');
+    }
+    public function checkout(){
+        return view('frontpage.campaign.checkout');
     }
 }

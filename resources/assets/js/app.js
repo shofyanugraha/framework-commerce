@@ -1,4 +1,3 @@
-
 /*
  |--------------------------------------------------------------------------
  | Laravel Spark Bootstrap
@@ -13,6 +12,14 @@
  | customize this script as you desire and load your own components.
  |
  */
+require('spark-bootstrap');
 
-require('bootstrap');
+require('./components/bootstrap');
 
+// Load JS Storage
+require('../../../node_modules/js-cookie/src/js.cookie');
+require('../../../node_modules/js-storage/js.storage.min');
+
+var app = new Vue({
+    mixins: [require('spark')]
+});

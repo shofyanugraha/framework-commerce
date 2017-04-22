@@ -11,5 +11,5 @@
 |
 */
 
-
-Route::get('/', 'PageController@home');
+Route::get('/', 'PageController@index');
+Route::get('/checkout', 'PageController@checkout');

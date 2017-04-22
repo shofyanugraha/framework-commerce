@@ -12,3 +12,5 @@
 require('./../spark-components/bootstrap');
 
 require('./home');
+require('./checkout/checkout');
+require('./cart-items/cart-items');
