@@ -13,6 +13,8 @@
 @import "./theme/_header";
 @import "./theme/_cart-item";
 @import "./theme/_checkout";
+@import "./theme/_sales";
+@import "./theme/_cart-preview";
 #spark-app{
 	color:#000!important;
 }
@@ -55,4 +57,62 @@
 		margin-bottom: .5em;
 		font-size: 16px;
 	}
+}
+.btn{
+	&.btn-primary{
+		color:#fff;
+		background:#000;
+	}
+	border-radius:0;
+	&.rounded{
+		border-radius:5px;
+	}
+	&.btn-social-wa{
+		background:#25D366;
+		color:white;
+	}
+	&.btn-social-fb{
+		background:#3b5998;
+		color:white;
+	}
+	&.btn-social-line{
+		background:#00c200;
+		color:white;
+	}
+}
+
+//breadcrumbs
+/* Style the list */
+.breadcrumbs {
+	ul{
+		padding: 10px 16px;
+		list-style: none;
+		color:#888;
+
+		/* Display list items side by side */
+		li {
+			display: inline;
+		}
+
+		/* Add a slash symbol (/) before/behind each list item */
+		li+li:before {
+			padding: 8px;
+			color: black;
+			font-family: "fontawesome";
+			content: "\f105";
+		}
+
+		/* Add a color to all links inside the list */
+		li a {
+			color: #000;
+			text-decoration: none;
+		}
+
+		/* Add a color on mouse-over */
+		li a:hover {
+			color: #000;
+			text-decoration: underline;
+		}
+	}
+	
 }

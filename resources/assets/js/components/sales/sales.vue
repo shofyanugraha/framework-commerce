@@ -38,7 +38,10 @@
                 <p class="description">{{item.desc}}</p>
                 <div class="row">
                     <div class="col-md-8">
-                        <input type="checkbox" class="color-select" v-model="colors" v-for="color in item.color" :value="color.title" :style="{background:color.hex}">
+                        <span v-for="color in item.color">
+                            <input type="radio" class="color-select" :id="'item-color-'+color.title" v-model="colors" :value="color.title">
+                            <label :for="'item-color-'+color.title" :style="{background:color.hex}"></label>
+                        </span>
                     </div>
                     <div class="col-md-4">
                         <select class="form-control" v-model="size">
@@ -50,20 +53,20 @@
 
                 <div class="countdown-holder">
 					<h4 class="text-center">Masa Preorder</h4>
-					<ul class="countdown text-center">
+					<ul class="countdown">
 			          <li class="seperator"><i class="fa fa-clock-o"></i></li>
 			          <li> <span class="days">00</span>
 			            <p class="days_ref">Hari</p>
 			          </li>
-			          <li class="seperator">:</li>
+			          <li class="seperator"></li>
 			          <li> <span class="hours">00</span>
 			            <p class="hours_ref">Jam</p>
 			          </li>
-			          <li class="seperator">:</li>
+			          <li class="seperator"></li>
 			          <li> <span class="minutes">00</span>
 			            <p class="minutes_ref">Menit</p>
 			          </li>
-			          <li class="seperator">:</li>
+			          <li class="seperator"></li>
 			          <li> <span class="seconds">00</span>
 			            <p class="seconds_ref">Detik</p>
 			          </li>
@@ -112,11 +115,18 @@
                             {
                                 hex:'#000',
                                 title:"black"
+                            },
+                            {
+                                hex:'#ddd',
+                                title:"gray"
                             }
                         ],
                         size:["s","m","l","xl"]
                 },
-                size: "s"
+                size: "s",
+                
+                //colors selected
+                colors:""
             }
         },
 
@@ -129,12 +139,6 @@
         },
 
         methods: {
-            size:()=>{
-                return 0;
-            },
-            colors:()=>{
-                return 0;
-            }
         },
 
         mounted() {

@@ -1,0 +1,159 @@
+#sale{
+    //header
+    .title{
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+    .price{
+        font-family: 'Montserrat', sans-serif;
+        color:#dc2e27;
+        font-size:20px;
+    }
+    //desc
+    .description{
+        margin: 2em 0;
+        text-align:justify;
+    }
+
+    // buy button
+    .buy-button{
+        margin: 2em 0;
+    }
+
+    /* Base for label styling */
+    .color-select[type="radio"]:not(:checked),
+    .color-select[type="radio"]:checked {
+    position: absolute;
+    left: -9999px;
+    }
+    .color-select[type="radio"]:not(:checked) + label,
+    .color-select[type="radio"]:checked + label {
+    position: relative;
+    padding-left: 1.95em;
+    cursor: pointer;
+    margin-right:5px;
+    }
+
+    /* radio aspect */
+    .color-select[type="radio"]:not(:checked) + label:before,
+    .color-select[type="radio"]:checked + label:before {
+    content: '';
+    position: absolute;
+    left: 0; top: -12px;
+    width: 2.25em; height: 2.25em;
+    border: 2px solid #ccc;
+    background: inherit;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,.1);
+    }
+    /* checked mark aspect */
+    .color-select[type="radio"]:not(:checked) + label:after,
+    .color-select[type="radio"]:checked + label:after {
+    content: '✔';
+    position: absolute;
+    top: -0.3em; left: .3em;
+    font-size: 2em;
+    line-height: 0.8;
+    color: #09ad7e;
+    transition: all .2s;
+    }
+    /* checked mark aspect changes */
+    .color-select[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    transform: scale(0);
+    }
+    .color-select[type="radio"]:checked + label:after {
+    opacity: 1;
+    transform: scale(1);
+    }
+    /* disabled radio */
+    .color-select[type="radio"]:disabled:not(:checked) + label:before,
+    .color-select[type="radio"]:disabled:checked + label:before {
+    box-shadow: none;
+    border-color: #bbb;
+    background-color: #ddd;
+    }
+    .color-select[type="radio"]:disabled:checked + label:after {
+    color: #999;
+    }
+    .color-select[type="radio"]:disabled + label {
+    color: #aaa;
+    }
+    /* accessibility */
+    .color-select[type="radio"]:checked:focus + label:before,
+    .color-select[type="radio"]:not(:checked):focus + label:before {
+    border: 2px dotted blue;
+    }
+
+    /* hover style just for information */
+    label:hover:before {
+    border: 2px solid #4778d9!important;
+    }
+
+    // countdown
+    .countdown-holder{
+        background: #e4e3e8;
+        padding: 5px 0;
+        margin: 2em 0;
+        h4{
+            font-size:24px;
+            font-weight: bold;
+        }
+        ul.countdown { 
+            li {
+                display: inline-block;
+                span { 
+                    font-size: 30px; 
+                    font-weight: bold;
+                    color:#dc2e27;
+                }
+                &.seperator {
+                    font-size: 50px;
+                    padding: 0 20px;
+                    display: inline-block;
+                    vertical-align: text-bottom;
+                    margin-top: 2px;
+                    color:#dc2e27;
+                }
+                p {
+                    font-size: 20px; 
+                }
+            }
+        }
+    }
+
+    //image preview
+    .image-preview-buttons{
+        img{
+            opacity: 0.5;
+            margin-bottom:5px;
+            &.active{
+                opacity:1;
+            }
+        }
+    }
+
+    //info preorder
+    .info-preorder{
+        margin:2.5em 0 0;
+        h3{
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size:18px;
+        }
+        p{
+            font-size:12px;
+            color:#888;
+        }
+    }
+
+    // social connect
+    .social-connect{
+        .info{
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size:15px;
+        }
+    }
+}
