@@ -83,7 +83,7 @@
 							<a href="#"><i class="fa fa-user"></i> Login</a>
 						</li>
 						<li class="cart-menu">
-							<a href="#"><i class="fa fa-shopping-bag"></i><span id="item-counter">0</span></a>
+							<a href="#" data-toggle="modal" data-target="#modalCart"><i class="fa fa-shopping-bag"></i><span id="item-counter">0</span></a>
 						</li>
 					</ul>
 				</div>
@@ -123,6 +123,22 @@
 
     <main id="spark-app">
 		@yield('content')
+		<div class="modal fade" tabindex="-1" role="dialog" id="modalCart">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Keranjang</h4>
+				</div>
+				<div class="modal-body">
+					<cart-items></cart-items>
+				</div>
+				<div class="modal-footer">
+					<a href="/cart" class="btn btn-primary">Lihat Keranjang</a>
+				</div>
+				</div>
+			</div>
+		</div>
 	</main>
 
 	<footer>
