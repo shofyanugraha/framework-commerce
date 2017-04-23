@@ -49,8 +49,5 @@ window.app = {
 require('./components/bootstrap');
 
 var app = new Vue({
-    mixins: [require('spark')],
-    data: {
-        showModal: true
-    }
+    mixins: [require('spark')]
 });
