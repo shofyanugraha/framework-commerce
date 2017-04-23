@@ -55,19 +55,19 @@
                 <div class="row bank-action">
                     <div class="col-md-4">
                         <a href="#" data-id="1" class="btn-bank"><img src=""></a>
-                        <div class="bank-option text-xs-center">
+                        <div class="bank-option text-center">
                             <input id="bank" class="bankoption" type="radio" name="bank" value="1">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <a href="#" data-id="1" class="btn-bank"><img src=""></a>
-                        <div class="bank-option text-xs-center">
+                        <div class="bank-option text-center">
                             <input id="bank" class="bankoption" type="radio" name="bank" value="1">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <a href="#" data-id="1" class="btn-bank"><img src=""></a>
-                        <div class="bank-option text-xs-center">
+                        <div class="bank-option text-center">
                             <input id="bank" class="bankoption" type="radio" name="bank" value="1">
                         </div>
                     </div>
@@ -79,15 +79,15 @@
         <div class="col-md-5 col-md-offset-1">
             <div class="checkout-cart">
                 <h2 class="bordered-title size-3"><span>Or</span>der Summary</h2>
-                <cart-items type="cart-checkout col-md-12"></cart-items>
-                <div class="checkout-shipping-cost">
+                <cart-items type="cart-checkout"></cart-items>
+                <div class="checkout-shipping-cost col-md-12">
                     <div class="pull-left">Ongkos Kirim</div>
-                    <div class="pull-right">30000</div>
+                    <div class="pull-right priceformat">30000</div>
                     <div class="clearfix"></div>
                 </div>
                 <div class="checkout-total col-md-12">
                     <div class="pull-left">Total</div>
-                    <div class="pull-right">330000</div>
+                    <div class="pull-right priceformat">330000</div>
                     <div class="clearfix"></div>
                 </div>
             </div>
@@ -111,7 +111,9 @@
             }
         },
 
-        mounted() {}
+        mounted() {
+            app.methods.priceFormat();
+        }
 
     }
 </script>

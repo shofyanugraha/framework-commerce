@@ -18,7 +18,7 @@
                     <p class="item-desc">{{item.desc}}</p>
                 </td>
                 <td style="vertical-align:middle">X {{item.qty}}</td>
-                <td style="vertical-align:middle">{{item.price}}</td>
+                <td style="vertical-align:middle;text-align:right"><span class="priceformat">{{item.price}}</span></td>
                 <td v-if="type == 'cart-modal'" style="vertical-align:middle"><a href="#"><i class="fa fa-times"></i></a></td>
                 <td v-if="type == 'cart-preview'" style="vertical-align:middle"><button class="btn btn-primary btn-sm">Edit</button></td>
             </tr>
@@ -65,6 +65,8 @@
             }
         },
 
-        mounted() {}
+        mounted() {
+            app.methods.priceFormat();
+        }
     }
 </script>
