@@ -21,22 +21,22 @@
 
                 items:[
                     {
-                        image: "http://calcio.app/images/product/01.png",
+                        image: "/images/product/01.png",
+                        title: "Chelsea Product",
+                        price: "150000" 
+                    },
+                    {
+                        image: "/images/product/01.png",
                         title: "Chelsea Product",
                         price: "150000"
                     },
                     {
-                        image: "http://calcio.app/images/product/01.png",
+                        image: "/images/product/01.png",
                         title: "Chelsea Product",
                         price: "150000"
                     },
                     {
-                        image: "http://calcio.app/images/product/01.png",
-                        title: "Chelsea Product",
-                        price: "150000"
-                    },
-                    {
-                        image: "http://calcio.app/images/product/01.png",
+                        image: "/images/product/01.png",
                         title: "Chelsea Product",
                         price: "150000"
                     }

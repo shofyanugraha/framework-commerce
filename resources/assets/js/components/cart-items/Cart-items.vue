@@ -40,14 +40,14 @@
             return {
                 sdata:[
                     {
-                        image: "http://calcio.app/images/product/01.png",
+                        image: "/images/product/01.png",
                         title: "Chelsea Product",
                         desc: "M - Putih",
                         price: 200000,
                         qty: 2
                     },
                     {
-                        image: "http://calcio.app/images/product/01.png",
+                        image: "/images/product/01.png",
                         title: "Chelsea Product",
                         desc: "M - Putih",
                         price: 100000,

@@ -3,14 +3,16 @@
 <link rel="stylesheet" href="{{ asset('plugins/layerslider/css/layerslider.css') }}" type="text/css">
 @endsection
 @section('content')
-<div id="layerslider" style="width:1280px;height:550px;max-width: 1280px;">
-	 <!-- First slide -->
-    <div class="ls-slide" data-ls="slidedelay:5000;transition2d:75,79;">
-        <img src="images/blank.png" class="ls-bg" alt="Slide background"/>
-        <img src="{{ asset('/images/madrid-front.png') }}" class="ls-l" style="top:80px;left:240px;font-weight: 300;font-size:40px;color:#000;white-space: nowrap;" data-ls="offsetxin:-100%;durationin:1000;easingin:easeOutBack;transformoriginin:left 0 0;"/>
-        <h3 class="ls-l" style="top:150px;left:660px;font-weight: 300;font-size:40px;color:#000;white-space: nowrap;" data-ls="offsetxin:	100%;durationin:1000;easingin:easeOutBack;transformoriginin:right 100% 0;">DAPATKAN PRODUK</h1>
-        <h3 class="ls-l" style="top:210px;left:660px;font-weight: 600;font-size:40px;color:#ec000f;white-space: nowrap;" data-ls="offsetxin:	100%;durationin:1000;easingin:easeOutBack;transformoriginin:right 100% 0;">WIND RUNNER</h1>
-        <div href="#" class="ls-l hidden-sm hidden-xs" style="top:270px;left:660px;white-space: nowrap;" data-ls="offsetxin:	100%;durationin:1000;easingin:easeOutBack;transformoriginin:right 100% 0;"><a href="#" class="btn btn-primary btn-lg">SELENGKAPNYA</a></div>
+<div id="slider">
+	<div id="layerslider" style="width:1280px;height:550px;max-width: 1280px;">
+		 <!-- First slide -->
+	    <div class="ls-slide" data-ls="slidedelay:5000;transition2d:75,79;">
+	        <img src="images/blank.png" class="ls-bg" alt="Slide background"/>
+	        <img src="{{ asset('/images/madrid-front.png') }}" class="ls-l" style="top:80px;left:240px;font-weight: 300;font-size:40px;color:#000;white-space: nowrap;" data-ls="offsetxin:-100%;durationin:1000;easingin:easeOutBack;transformoriginin:left 0 0;"/>
+	        <h3 class="ls-l" style="top:150px;left:660px;font-weight: 300;font-size:40px;color:#000;white-space: nowrap;" data-ls="offsetxin:	100%;durationin:1000;easingin:easeOutBack;transformoriginin:right 100% 0;">DAPATKAN PRODUK</h1>
+	        <h3 class="ls-l" style="top:210px;left:660px;font-weight: 600;font-size:40px;color:#ec000f;white-space: nowrap;" data-ls="offsetxin:	100%;durationin:1000;easingin:easeOutBack;transformoriginin:right 100% 0;">WIND RUNNER</h1>
+	        <div href="#" class="ls-l hidden-sm hidden-xs" style="top:270px;left:660px;white-space: nowrap;" data-ls="offsetxin:	100%;durationin:1000;easingin:easeOutBack;transformoriginin:right 100% 0;"><a href="#" class="btn btn-primary btn-lg">SELENGKAPNYA</a></div>
+		</div>
 	</div>
 </div>
 <div class="main-content section">
