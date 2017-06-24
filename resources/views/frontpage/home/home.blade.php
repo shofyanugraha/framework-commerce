@@ -19,18 +19,22 @@
 	<div class="container">
 		<h1 class="sc-title">New Arival</h1>
 		<div class="row">
-			@foreach($latest as $product)
-			<div class="col-md-3">
-				<div class="product text-center">
-					<div class="product-image">
-						<img src="{{ isset($product->details[0]->front_image) ? $product->details[0]->front_image->item->thumb : '' }}" class="img-responsive">
+			@forelse($latest as $product)
+				<div class="col-md-3">
+					<div class="product text-center">
+						<div class="product-image">
+							<img src="{{ isset($product->details[0]->front_image) ? $product->details[0]->front_image->item->thumb : '' }}" class="img-responsive">
+						</div>
+						<div class="product-title h4"><a href="{{ $product->slug }}">{{ $product->name}}</a></div>
+						<div class="product-price">Rp {{ isset($product->details[0]->sale_price) ? number_format($product->details[0]->sale_price, 0, ',', '.') : '' }}</div>
+						<a href="{{ $product->slug }}" class="btn  btn-primary">Lihat Detail</a>
 					</div>
-					<div class="product-title h4"><a href="{{ $product->slug }}">{{ $product->name}}</a></div>
-					<div class="product-price">Rp {{ isset($product->details[0]->sale_price) ? number_format($product->details[0]->sale_price, 0, ',', '.') : '' }}</div>
-					<a href="{{ $product->slug }}" class="btn  btn-primary">Lihat Detail</a>
 				</div>
-			</div>
-			@endforeach
+			@empty
+				<div class="col-md-12 text-center">
+					No Product
+				</div>
+			@endforelse
 		</div>
 		<div class="row">
 			<div class="col-md-2 col-md-offset-5">
