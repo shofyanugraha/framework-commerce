@@ -59,7 +59,7 @@
 				<div class="col-md-12 text-center">
 					No Product
 				</div>
-			@endforeach
+			@endforelse
 		</div>
 		<div class="row">
 			<div class="col-md-2 col-md-offset-5">
