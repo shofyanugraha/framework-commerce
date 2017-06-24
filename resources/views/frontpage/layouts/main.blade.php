@@ -44,101 +44,14 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse main-nav" id="navbar-collapse-1">
 					<!-- regular link -->
-					<ul class="nav navbar-nav navbar-left main-nav">
-						<!-- divider -->
-						<li class="active">
-							<a href="#">Home</a>
-						</li>
-						<li>
-							<a href="#">Clubs</a>
-						</li>
-						<li>
-							<a href="#">Jackets</a>
-						</li>
-						<li>
-							<a href="#">Shirts</a>
-						</li>
-						<li class="dropdown-full">	
-        					<a data-toggle="dropdown" href="javascript:;" class="dropdown-toggle">Accessories <i class="caret"></i></a>
-							<div class="dropdown-menu no-shadow no-border-radius">
-								<a href="#" class="col-xs-12 col-sm-6 col-md-3">Accessories</a>
-								<a href="#" class="col-xs-12 col-sm-6 col-md-3">Accessories</a>
-								<a href="#" class="col-xs-12 col-sm-6 col-md-3">Accessories</a>
-								<a href="#" class="col-xs-12 col-sm-6 col-md-3">Accessories</a>
-								<a href="#" class="col-xs-12 col-sm-6 col-md-3">Accessories</a>
-								<a href="#" class="col-xs-12 col-sm-6 col-md-3">Accessories</a>
-								<a href="#" class="col-xs-12 col-sm-6 col-md-3">Accessories</a>
-								<a href="#" class="col-xs-12 col-sm-6 col-md-3">Accessories</a>
-								<a href="#" class="col-xs-12 col-sm-6 col-md-3">Accessories</a>
-								<a href="#" class="col-xs-12 col-sm-6 col-md-3">Accessories</a>
-								<a href="#" class="col-xs-12 col-sm-6 col-md-3">Accessories</a>
-								<a href="#" class="col-xs-12 col-sm-6 col-md-3">Accessories</a>
-							</div>
-        				</li>
-						<li class="divider"></li>
-					</ul>
-					
-					<ul class="nav navbar-nav navbar-right nav-user">
-						<li>
-							<a href="#"><i class="fa fa-user"></i> Login</a>
-						</li>
-						<li class="cart-menu">
-							<a href="#" data-toggle="modal" data-target="#modalCart"><i class="fa fa-shopping-bag"></i><span id="item-counter">0</span></a>
-						</li>
-					</ul>
+					@include('frontpage/layouts/menu')
 				</div>
 			</div>
     	</nav>
-		{{-- <div class="navbar navbar-default main-menu">
-			<div class="container">
-				<a class="navbar-brand" href="#"><img src="{{ asset('img/logo.png') }}"></a>
-				<ul class="nav navbar-nav main-nav">
-					<li class="active">
-						<a href="#">Home</a>
-					</li>
-					<li>
-						<a href="#">Clubs</a>
-					</li>
-					<li>
-						<a href="#">Jackets</a>
-					</li>
-					<li>
-						<a href="#">Shirts</a>
-					</li>
-					<li>
-						<a href="#">Accessories</a>
-					</li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right nav-user">
-					<li>
-						<a href="#"><i class="fa fa-user"></i> Login</a>
-					</li>
-					<li class="cart-menu">
-						<a href="#"><i class="fa fa-shopping-bag"></i><span id="item-counter">0</span></a>
-					</li>
-				</ul>
-			</div>
-		</div> --}}
 	</header>
 
     <main id="spark-app">
 		@yield('content')
-		<div class="modal fade" tabindex="-1" role="dialog" id="modalCart">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title">Keranjang</h4>
-				</div>
-				<div class="modal-body">
-					<cart-items></cart-items>
-				</div>
-				<div class="modal-footer">
-					<a href="/cart" class="btn btn-primary">Lihat Keranjang</a>
-				</div>
-				</div>
-			</div>
-		</div>
 	</main>
 
 	<footer>
@@ -200,13 +113,51 @@
 			</div>
 		</div>
 	</footer>
+	<div class="modal fade" tabindex="-1" role="dialog" id="modalCart">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Keranjang</h4>
+				</div>
+				<div class="modal-body">
+					<div class="cart-items" style="display: none;">
+						<table class="table">
+							<thead>
+								<tr>
+									<td width="100"></td>
+									<td>Produk</td>
+									<td>Size</td>
+									<td width="60" class="text-center">Qty</td>
+									<td>Price</td>
+									<td><a href="#" class="remove-all-cart" onclick="deleteAll()"><i class="fa fa-times"></i></a></td>
+								</tr>
+							</thead>
+							<tbody class="cart-holder-item">
+
+							</tbody>
+							<tfooter>
+								<tr>
+									<td colspan="4" class="text-right">Total</td>
+									<td class="priceformat" id="totalPrice"></td>
+								</tr>
+							</tfooter>
+						</table>
+					</div>
+					<div class="cart-none">
+						Belum ada barang di keranjang
+					</div>
+				</div>
+				<div class="modal-footer">
+					<a href="#" class="btn btn-info btnClose">Tambah Barang</a>
+					<a href="/checkout" class="btn btn-primary btnCheckout">Lakukan Pembayarang</a>
+				</div>
+			</div>
+		</div>
+	</div>
   <!-- JavaScript -->
-	<script>
-		window.Spark = <?php echo json_encode(array_merge(
-			Spark::scriptVariables(), []
-		)); ?>;
-	</script>
-	<script src="{{ mix('js/app.js') }}"></script>
+
+	<script src="{{ mix('js/customize.js') }}"></script>
   
 	<script>
     	$( window ).load(function() {
@@ -237,9 +188,7 @@
 			$('a[data-toggle="tab"]').each(function() {
 						$(this).parent('li').removeClass('active');
 			});
-		})
-		$('.carousel').carousel();
-		
+		});
 	</script>
   <!-- Scripts -->
   @yield('scripts', '')

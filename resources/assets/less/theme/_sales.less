@@ -1,8 +1,18 @@
 #sale{
     //header
+
+    .product-description {
+        padding:20px 20px;
+        background: #fff;
+        border:1px solid #efefef;
+        -webkit-border-radius: 2px;
+        -moz-border-radius:2px;
+        border-radius:2px;
+    }
     .title{
         font-family: 'Montserrat', sans-serif;
         font-weight: 800;
+        margin-top: 0;
         text-transform: uppercase;
     }
     .price{
@@ -18,93 +28,97 @@
 
     // buy button
     .buy-button{
-        margin: 2em 0;
+        background: #ec000f;
+        padding:15px 0;
+        font-size:18px;
     }
 
     /* Base for label styling */
     .color-select[type="radio"]:not(:checked),
     .color-select[type="radio"]:checked {
-    position: absolute;
-    left: -9999px;
-    }
-    .color-select[type="radio"]:not(:checked) + label,
-    .color-select[type="radio"]:checked + label {
-    position: relative;
-    padding-left: 1.95em;
-    cursor: pointer;
-    margin-right:5px;
+        display: none;
     }
 
-    /* radio aspect */
-    .color-select[type="radio"]:not(:checked) + label:before,
-    .color-select[type="radio"]:checked + label:before {
-    content: '';
-    position: absolute;
-    left: 0; top: -12px;
-    width: 2.25em; height: 2.25em;
-    border: 2px solid #ccc;
-    background: inherit;
-    border-radius: 4px;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,.1);
+    .color-select[type="radio"]:not(:checked) + label,
+    .color-select[type="radio"]:checked + label {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 30px;
+        border: 2px solid #ccc;
+        box-shadow: inset 0 1px 3px rgba(0,0,0,.1);
+        -webkit-border-radius:2px;
+        -moz-border-radius:2px;
+        border-radius:2px;
+        cursor: pointer;
     }
+
     /* checked mark aspect */
     .color-select[type="radio"]:not(:checked) + label:after,
     .color-select[type="radio"]:checked + label:after {
-    content: '✔';
-    position: absolute;
-    top: -0.3em; left: .3em;
-    font-size: 2em;
-    line-height: 0.8;
-    color: #09ad7e;
-    transition: all .2s;
+        content: "\f00c";
+        position: absolute;  left: .3em;
+        font-family: 'FontAwesome';
+        font-size: 2em;
+        line-height: 0.8;
+        color: #09ad7e;
+        transition: all .2s;
     }
     /* checked mark aspect changes */
     .color-select[type="radio"]:not(:checked) + label:after {
-    opacity: 0;
-    transform: scale(0);
+        opacity: 0;
+        transform: scale(0);
     }
     .color-select[type="radio"]:checked + label:after {
-    opacity: 1;
-    transform: scale(1);
-    }
-    /* disabled radio */
-    .color-select[type="radio"]:disabled:not(:checked) + label:before,
-    .color-select[type="radio"]:disabled:checked + label:before {
-    box-shadow: none;
-    border-color: #bbb;
-    background-color: #ddd;
-    }
-    .color-select[type="radio"]:disabled:checked + label:after {
-    color: #999;
-    }
-    .color-select[type="radio"]:disabled + label {
-    color: #aaa;
-    }
-    /* accessibility */
-    .color-select[type="radio"]:checked:focus + label:before,
-    .color-select[type="radio"]:not(:checked):focus + label:before {
-    border: 2px dotted blue;
+        opacity: 1;
+        transform: scale(1);
     }
 
-    /* hover style just for information */
-    label:hover:before {
-    border: 2px solid #4778d9!important;
+    /* Base for label styling */
+    .size-select[type="radio"]:not(:checked),
+    .size-select[type="radio"]:checked {
+        display: none;
     }
 
-    // countdown
+    .size-select[type="radio"]:not(:checked) + label,
+    .size-select[type="radio"]:checked + label {
+        position: relative;
+        display: inline-block;
+        text-align:center;
+        padding: 5px 10px;
+        border: 2px solid #ccc;
+        box-shadow: inset 0 1px 3px rgba(0,0,0,.1);
+        -webkit-border-radius:2px;
+        -moz-border-radius:2px;
+        border-radius:2px;
+        cursor: pointer;
+        background: #fff;
+    }
+
+    /* checked mark aspect */
+    .size-select[type="radio"]:checked + label{
+        background: #ccc;
+        color: #fff;
+    }
+
+
+        // countdown
     .countdown-holder{
         background: #e4e3e8;
         padding: 5px 0;
         margin: 2em 0;
+        text-align: center;
         h4{
             font-size:24px;
             font-weight: bold;
         }
-        ul.countdown { 
+        ul.countdown {
+            display: inline-block;
+            padding:0;
             li {
                 display: inline-block;
-                span { 
-                    font-size: 30px; 
+                span {
+                    font-size: 30px;
                     font-weight: bold;
                     color:#dc2e27;
                 }
@@ -117,7 +131,7 @@
                     color:#dc2e27;
                 }
                 p {
-                    font-size: 20px; 
+                    font-size: 20px;
                 }
             }
         }
@@ -128,9 +142,9 @@
         img{
             opacity: 0.5;
             margin-bottom:5px;
-            &.active{
-                opacity:1;
-            }
+        }
+        .active img{
+            opacity:1;
         }
     }
 
@@ -156,4 +170,68 @@
             font-size:15px;
         }
     }
+}
+
+.separator {
+    background: #1C1C1C;
+    color: #fff;
+
+    .user-profile {
+        padding-top:20px;
+        padding-bottom:20px;
+        h5, h4{
+            margin-top: 0;
+            font-weight: bold;
+            a{
+                color: #fff;
+            }
+        }
+        .btn-danger {
+            background: #EC000F;
+            border-color: #EC000F;
+        }
+    }
+    .nav-tabs {
+        display: block;
+        float:right;
+        border-bottom:none;
+        li {
+            a{
+                display: block;
+                padding: 43px 30px;
+                font-size: 16px;
+                color: #fff;
+                text-align: center;
+                -webkit-border-radius:0;
+                -moz-border-radius:0;
+                border-radius:0;
+                border-left: 1px solid #ccc;
+                &:hover {
+                    opacity: .8;
+                    background: transparent;
+                }
+            }
+            &.active a{
+                background : #F5F8FA;
+                color:#1c1c1c;
+                margin:0;
+            }
+            &.bg-wa{
+                background:#00E676;
+            }
+            &.bg-fb{
+                background: #3B5998;
+            }
+        }
+        i {
+            display: block;
+            font-size: 24px;
+        }
+    }
+}
+
+.tab-content {
+    padding-bottom:2em;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 2em;
 }

@@ -1044,12 +1044,57 @@
 	.navbar .navbar-nav[data-duration="ultraslow"] .dropdown-menu,.navbar[data-duration="ultraslow"] .navbar-nav .dropdown-menu,.navbar .navbar-nav .dropdown-menu[data-duration="ultraslow"]{-webkit-animation-duration:1500ms;-moz-animation-duration:1500ms;-o-animation-duration:1500ms;animation-duration:1500ms}
 	.navbar:not(.dropdown-onhover) .navbar-nav:not(.dropdown-onhover)>li:not(.dropdown-onhover):not(.open)>.dropdown-menu,.navbar:not(.dropdown-onhover) .navbar-nav:not(.dropdown-onhover)>li:not(.dropdown-onhover):not(.open)>.dropdown-grid-wrapper>.dropdown-menu,.navbar.dropdown-onhover.no-fix .navbar-nav>li:not(:hover)>.dropdown-menu,.navbar.dropdown-onhover.no-fix .navbar-nav>li:not(:hover)>.dropdown-grid-wrapper>.dropdown-menu,.navbar.dropdown-onhover:not(.no-fix) .navbar-nav>li:not(.open):not(:hover)>.dropdown-menu,.navbar.dropdown-onhover:not(.no-fix) .navbar-nav>li:not(.open):not(:hover)>.dropdown-grid-wrapper>.dropdown-menu,.navbar .navbar-nav.dropdown-onhover.no-fix>li:not(:hover)>.dropdown-menu,.navbar .navbar-nav.dropdown-onhover.no-fix>li:not(:hover)>.dropdown-grid-wrapper>.dropdown-menu,.navbar .navbar-nav>li.dropdown-onhover.no-fix:not(:hover)>.dropdown-menu,.navbar .navbar-nav>li.dropdown-onhover.no-fix:not(:hover)>.dropdown-grid-wrapper>.dropdown-menu,.navbar .navbar-nav.dropdown-onhover:not(.no-fix)>li:not(.open):not(:hover)>.dropdown-menu,.navbar .navbar-nav.dropdown-onhover:not(.no-fix)>li:not(.open):not(:hover)>.dropdown-grid-wrapper>.dropdown-menu,.navbar .navbar-nav>li.dropdown-onhover:not(.no-fix):not(.open):not(:hover)>.dropdown-menu,.navbar .navbar-nav>li.dropdown-onhover:not(.no-fix):not(.open):not(:hover)>.dropdown-grid-wrapper>.dropdown-menu{-moz-animation-name:none;-o-animation-name:none;animation-name:none;-webkit-animation-name:none}
 	.navbar .navbar-nav li[class*="collapse-"]>.dropdown-menu,.navbar .navbar-nav li[class*="-onhover"]:not(.no-fix):not(:hover)>.dropdown-menu:not(.in):not(.collapsing),.navbar .navbar-nav li[class*="-onhover"].no-fix:not(:hover)>.dropdown-menu:not(.collapsing),.navbar .navbar-nav li[class*="-onclick"]>.dropdown-menu.collapse:not(.in):not(.collapsing),.navbar .navbar-nav .no-animation .dropdown-menu,.navbar .navbar-nav .dropdown-menu.no-animation{-moz-animation-name: none!important;-o-animation-name: none!important;animation-name: none!important;-webkit-animation-name: none!important}
-}/*!
+}html.magnifying > body {
+  overflow-x: hidden !important;
+}
+.magnify {
+  position: relative;
+  display: inline-block;
+}
+.magnify .magnify-lens {
+  /* Create the magnifying lens */
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  /* Multiple box shadows to achieve the glass lens effect */
+  -webkit-box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85),
+    0 0 7px 7px rgba(0, 0, 0, 0.25),
+    inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85),
+    0 0 7px 7px rgba(0, 0, 0, 0.25),
+    inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+  /* Hide the mouse pointer */
+  cursor: none;
+  /* Hide the lens by default */
+  display: none;
+  /* Place the lens on top of other elements */
+  z-index: 100;
+}
+.magnify .magnify-lens.loading {
+  background: #333 !important;
+  opacity: 0.8;
+}
+.magnify .magnify-lens.loading:after {
+  /* Loading text */
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  content: 'Loading...';
+  font: italic normal 16px/1 Calibri, sans-serif;
+  text-align: center;
+  text-shadow: 0 0 2px rgba(51, 51, 51, 0.8);
+  text-transform: none;
+}
+/*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
 
 
 html {
@@ -8538,6 +8583,7 @@ header {
   color: #fff;
   font-size: 12px;
   padding: 12px 15px;
+  height: auto;
 }
 .top-nav .nav > li > a:hover,
 .top-nav .nav > li > a:focus {
@@ -8555,7 +8601,6 @@ header {
 }
 .main-menu .navbar-brand {
   position: relative;
-  top: -22px;
   height: 80px;
   padding: 0;
 }
@@ -8563,8 +8608,9 @@ header {
   max-height: 100%;
   max-width: 100%;
 }
-.main-menu .navbar-brand-fixed {
-  top: 15px;
+.main-menu .nav > li > a:hover,
+.main-menu .nav > li > a:focus {
+  background: transparent;
 }
 .main-nav.navbar-nav,
 .nav-user.navbar-nav {
@@ -8608,6 +8654,7 @@ header {
 }
 .nav-user.navbar-nav .cart-menu a:hover {
   opacity: .5;
+  background: transparent;
 }
 .nav-user.navbar-nav .cart-menu i {
   color: #ec000f;
@@ -8624,6 +8671,7 @@ header {
   border-radius: 50%;
 }
 .dropdown-menu a {
+  color: #000;
   padding: 15px 0;
 }
 .dropdown-menu a:hover {
@@ -8635,11 +8683,234 @@ header {
   content: "";
   margin-left: 15px;
 }
+.cart-items .table {
+  border: none;
+}
+.cart-items .table tr {
+  border: none;
+}
+.cart-items .table tr td {
+  border: none;
+}
+.btn-bank {
+  padding: 10px;
+  border: 1px solid #ddd;
+  display: block;
+}
+.bank-option {
+  background: #F5F7F7;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-top: none;
+}
+.bank-action {
+  margin-bottom: 20px;
+}
+.checkout-shipping-cost {
+  font-family: 'Montserrat', sans-serif;
+}
+.checkout-shipping-cost .pull-left {
+  font-weight: bold;
+}
+.checkout-total {
+  font-family: 'Montserrat', sans-serif;
+}
+.checkout-total .pull-left {
+  font-weight: bolder;
+}
+#sale {
+  /* Base for label styling */
+  /* checked mark aspect */
+  /* checked mark aspect changes */
+  /* Base for label styling */
+  /* checked mark aspect */
+}
+#sale .product-description {
+  padding: 20px 20px;
+  background: #fff;
+  border: 1px solid #efefef;
+  border-radius: 2px;
+}
+#sale .title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+#sale .price {
+  font-family: 'Montserrat', sans-serif;
+  color: #dc2e27;
+  font-size: 20px;
+}
+#sale .description {
+  margin: 2em 0;
+  text-align: justify;
+}
+#sale .buy-button {
+  background: #ec000f;
+  padding: 15px 0;
+  font-size: 18px;
+}
+#sale .color-select[type="radio"]:not(:checked),
+#sale .color-select[type="radio"]:checked {
+  display: none;
+}
+#sale .color-select[type="radio"]:not(:checked) + label,
+#sale .color-select[type="radio"]:checked + label {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  border: 2px solid #ccc;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  cursor: pointer;
+}
+#sale .color-select[type="radio"]:not(:checked) + label:after,
+#sale .color-select[type="radio"]:checked + label:after {
+  content: "\f00c";
+  position: absolute;
+  left: .3em;
+  font-family: 'FontAwesome';
+  font-size: 2em;
+  line-height: 0.8;
+  color: #09ad7e;
+  transition: all .2s;
+}
+#sale .color-select[type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+#sale .color-select[type="radio"]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+#sale .size-select[type="radio"]:not(:checked),
+#sale .size-select[type="radio"]:checked {
+  display: none;
+}
+#sale .size-select[type="radio"]:not(:checked) + label,
+#sale .size-select[type="radio"]:checked + label {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  padding: 5px 10px;
+  border: 2px solid #ccc;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  cursor: pointer;
+  background: #fff;
+}
+#sale .size-select[type="radio"]:checked + label {
+  background: #ccc;
+  color: #fff;
+}
+#sale .countdown-holder {
+  background: #e4e3e8;
+  padding: 5px 0;
+  margin: 2em 0;
+  text-align: center;
+}
+#sale .countdown-holder h4 {
+  font-size: 24px;
+  font-weight: bold;
+}
+#sale .countdown-holder ul.countdown {
+  display: inline-block;
+  padding: 0;
+}
+#sale .countdown-holder ul.countdown li {
+  display: inline-block;
+}
+#sale .countdown-holder ul.countdown li span {
+  font-size: 30px;
+  font-weight: bold;
+  color: #dc2e27;
+}
+#sale .countdown-holder ul.countdown li.seperator {
+  font-size: 50px;
+  padding: 0 20px;
+  display: inline-block;
+  vertical-align: text-bottom;
+  margin-top: 2px;
+  color: #dc2e27;
+}
+#sale .countdown-holder ul.countdown li p {
+  font-size: 20px;
+}
+#sale .image-preview-buttons img {
+  opacity: 0.5;
+  margin-bottom: 5px;
+}
+#sale .image-preview-buttons .active img {
+  opacity: 1;
+}
+#sale .info-preorder {
+  margin: 2.5em 0 0;
+}
+#sale .info-preorder h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+#sale .info-preorder p {
+  font-size: 12px;
+  color: #888;
+}
+#sale .social-connect .info {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+}
+.separator {
+  background: #1C1C1C;
+  color: #fff;
+}
+.separator .user-profile {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.separator .user-profile h5,
+.separator .user-profile h4 {
+  margin-top: 0;
+}
+.separator .user-profile h5 a,
+.separator .user-profile h4 a {
+  color: #fff;
+}
+.separator .user-profile .btn-danger {
+  background: #EC000F;
+  border-color: #EC000F;
+}
+.separator .nav-tabs {
+  display: inline-block;
+  border-bottom: none;
+}
+.separator .nav-tabs li a {
+  display: block;
+  padding: 43px 25px;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  border-radius: 0;
+}
+.separator .nav-tabs li.active a {
+  background: #fff;
+  color: #1c1c1c;
+}
+.separator .nav-tabs i {
+  display: block;
+  font-size: 24px;
+}
 #spark-app {
   color: #000!important;
 }
-#layerslider {
+#slider {
   background: #e1e1e1;
+}
+#layerslider {
   margin-top: -22px;
 }
 #layerslider .ls-bar-timer {
@@ -8675,5 +8946,67 @@ header {
   margin-bottom: .5em;
   font-size: 16px;
 }
-
-/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIvY3NzL2FwcC5jMGNkNjdjMWRlY2Y0N2MyN2E4OS5jc3MiLCJzb3VyY2VSb290IjoiIn0=*/
+.btn {
+  border-radius: 0;
+}
+.btn.btn-primary {
+  color: #fff;
+  background: #000;
+}
+.btn.rounded {
+  border-radius: 5px;
+}
+.btn.btn-social-wa {
+  background: #25D366;
+  color: white;
+}
+.btn.btn-social-fb {
+  background: #3b5998;
+  color: white;
+}
+.btn.btn-social-line {
+  background: #00c200;
+  color: white;
+}
+/* Style the list */
+.breadcrumbs ul {
+  padding: 10px 16px;
+  list-style: none;
+  color: #888;
+  /* Display list items side by side */
+  /* Add a slash symbol (/) before/behind each list item */
+  /* Add a color to all links inside the list */
+  /* Add a color on mouse-over */
+}
+.breadcrumbs ul li {
+  display: inline;
+}
+.breadcrumbs ul li + li:before {
+  padding: 8px;
+  color: black;
+  font-family: "fontawesome";
+  content: "\f105";
+}
+.breadcrumbs ul li a {
+  color: #000;
+  text-decoration: none;
+}
+.breadcrumbs ul li a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+.bordered-title {
+  font-family: 'Montserrat', sans-serif;
+}
+.bordered-title.size-3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+.bordered-title span {
+  border-bottom: 2px solid #111;
+  padding: 5px 0px;
+}
+#modalCart {
+  z-index: 9999999;
+}

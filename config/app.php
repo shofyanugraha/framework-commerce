@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Calcio Outfit'),
 
     /*
     |--------------------------------------------------------------------------
@@ -180,6 +180,9 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Ixudra\Curl\CurlServiceProvider::class,
+        Indal\Markdown\MarkdownServiceProvider::class,
+        Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
 
     ],
 
@@ -230,7 +233,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Module' => Caffeinated\Modules\Facades\Module::class,
-
+        'Curl'          => Ixudra\Curl\Facades\Curl::class,
+        'Markdown' => Indal\Markdown\Facade::class,
+        'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
     ],
 
 ];

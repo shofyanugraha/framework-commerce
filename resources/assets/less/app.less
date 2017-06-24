@@ -3,18 +3,12 @@
 // @import "./spark/spark";
 @import "./../../../vendor/laravel/spark/resources/assets/less/spark";
 
-// @import meganavbar 
-@import "../../../public/plugins/meganavbar/css/MegaNavbar.min.css";
-@import "../../../public/plugins/meganavbar/css/animation/animation.css";
-// @import magnify
-@import "../../../node_modules/magnify/dist/css/magnify.css";
-// @import custom css
-@import "./theme/_footer";
-@import "./theme/_header";
-@import "./theme/_cart-item";
-@import "./theme/_checkout";
-@import "./theme/_sales";
-@import "./theme/_cart-preview";
+body {
+	background: #fff;
+}
+a {
+	color: #EC000F;
+}
 #spark-app{
 	color:#000!important;
 }
@@ -36,19 +30,19 @@
 	text-align: center;
 	margin: 0;
 	&:after {
-    content: "";
-    width: 70px;
-    height: 4px;
-    background-color: #ec000f;
-    margin: 15px auto 30px;
-    display: block;
+		content: "";
+		width: 70px;
+		height: 4px;
+		background-color: #ec000f;
+		margin: 15px auto 30px;
+		display: block;
 	}
 }
 
 .product {
 	margin-bottom: 40px;
 	.product-image {
-		background: #e1e1e1;
+		background: #fff;
 		padding: 20px;
 		img{
 			display: inline-block;
@@ -59,13 +53,24 @@
 		margin-bottom: .5em;
 		font-size: 16px;
 	}
+	a {
+		color : #000;
+		text-decoration: none;
+		&:hover {
+			color: #EC000F;
+		}
+	}
 }
 .btn{
+	border-radius:0;
 	&.btn-primary{
 		color:#fff;
 		background:#000;
 	}
-	border-radius:0;
+	&.btn-danger {
+		background: #EC000F;
+		color: #fff;
+	}
 	&.rounded{
 		border-radius:5px;
 	}
@@ -116,12 +121,12 @@
 			text-decoration: underline;
 		}
 	}
-	
+
 }
 
 //custom title
 .bordered-title{
-    font-family: 'Montserrat', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	&.size-3{
 		font-size:22px;
 		font-weight: 700;
@@ -129,10 +134,39 @@
 	}
 	span{
 		border-bottom: 2px solid #111;
-    	padding: 5px 0px;
+		padding: 5px 0px;
 	}
 }
 
 #modalCart {
-    z-index: 9999999;
+	z-index: 9999999;
 }
+
+.txtRed {
+	color: #EC000F;
+	font-weight: bold;
+}
+
+.badge {
+	margin-right:5px;
+	&.red {
+		background: #ec000f;
+		color: #fff;
+	}
+}
+
+.table .table-no-border td, .table .table-no-border th{border-color:transparent}
+
+// @import meganavbar 
+@import "../../../public/plugins/meganavbar/css/MegaNavbar.min.css";
+@import "../../../public/plugins/meganavbar/css/animation/animation.css";
+// @import magnify
+@import "../../../node_modules/magnify/dist/css/magnify.css";
+// @import custom css
+@import "./theme/_footer";
+@import "./theme/_header";
+@import "./theme/_cart-item";
+@import "./theme/_checkout";
+@import "./theme/_sales";
+@import "./theme/_cart-preview";
+@import "./theme/_track-order";

@@ -1,5 +1,4 @@
 let mix = require('laravel-mix');
-var path = require('path');
 
 /*
  |--------------------------------------------------------------------------
@@ -13,17 +12,17 @@ var path = require('path');
  */
 
 mix.less('resources/assets/less/app.less', 'public/css').version().sourceMaps()
-   .copy('node_modules/sweetalert/dist/sweetalert.min.js', 'public/js/sweetalert.min.js')
-   .copy('node_modules/sweetalert/dist/sweetalert.css', 'public/css/sweetalert.css')
-   .js('resources/assets/js/app.js', 'public/js').version().sourceMaps()
-   .webpackConfig({
-        resolve: {
-            modules: [
-                path.resolve(__dirname, 'vendor/laravel/spark/resources/assets/js'),
-                'node_modules'
-            ],
-            alias: {
-                'vue$': 'vue/dist/vue.js'
-            }
-        }
-   });
+   .copy('node_modules/sweetalert/dist/sweetalert.css', 'public/css/sweetalert.css');
+
+mix.scripts([
+    'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/bootstrap/dist/js/bootstrap.min.js',
+    'node_modules/axios/dist/axios.js',
+    'node_modules/sweetalert/dist/sweetalert.min.js',
+    'node_modules/jquery-price-format/jquery.priceformat.min.js',
+    'node_modules/magnify/dist/js/jquery.magnify.js',
+    'node_modules/jquery-validation/dist/jquery.validate.min.js',
+    'node_modules/js-storage/js.storage.min.js',
+    'public/js/jquery.downCount.js',
+    'public/js/app.js',
+    'node_modules/form-serializer/dist/jquery.serialize-object.min.js'], 'public/js/customize.js').sourceMaps();
