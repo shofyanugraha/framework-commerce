@@ -11,8 +11,9 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.less('resources/assets/less/app.less', 'public/css').version().sourceMaps()
-   .copy('node_modules/sweetalert/dist/sweetalert.css', 'public/css/sweetalert.css');
+mix.sass('resources/assets/scss/app.scss', 'public/css').sourceMaps()
+    .copy('node_modules/sweetalert/dist/sweetalert.css', 'public/css/sweetalert.css')
+    .copy('node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css', 'public/css/datepicker.css').version();
 
 mix.scripts([
     'node_modules/jquery/dist/jquery.min.js',
@@ -23,6 +24,7 @@ mix.scripts([
     'node_modules/magnify/dist/js/jquery.magnify.js',
     'node_modules/jquery-validation/dist/jquery.validate.min.js',
     'node_modules/js-storage/js.storage.min.js',
+    'node_modules/@fengyuanchen/datepicker/dist/datepicker.min.js',
     'public/js/jquery.downCount.js',
     'public/js/app.js',
     'node_modules/form-serializer/dist/jquery.serialize-object.min.js'], 'public/js/customize.js').sourceMaps();

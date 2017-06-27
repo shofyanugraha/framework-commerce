@@ -1,5 +1,5 @@
 app = {};
-app.host = '//api.calciooutfit.com/v1/';
+app.host = '//api-calcio.dev/v1/';
 app.handleError = function(data) {
     var message;
     if (typeof data === 'string') {

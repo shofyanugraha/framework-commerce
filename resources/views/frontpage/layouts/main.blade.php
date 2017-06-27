@@ -25,7 +25,7 @@
 						<a href="{{ url('/track-order') }}">Lacak Pesanan</a>
 					</li>
 					<li>
-						<a href="{{ url('/confirmation-order') }}">Konfirmasi Pembayaran</a>
+						<a href="{{ url('/confirmation') }}">Konfirmasi Pembayaran</a>
 					</li>
 				</ul>
 			</div>
@@ -39,10 +39,10 @@
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#"><img src="{{ asset('img/logo.png') }}"></a>
+					<a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('img/logo.png') }}"></a>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse main-nav" id="navbar-collapse-1">
+				<div class="collapse navbar-collapse main-nav">
 					<!-- regular link -->
 					@include('frontpage/layouts/menu')
 				</div>
@@ -156,7 +156,11 @@
 		</div>
 	</div>
   <!-- JavaScript -->
-
+	<div class="overlay" style="display:none;">
+		<div class="text-xs-center" id="loading">
+			<i class="fa fa-spinner fa-4x fa-spin"></i>
+		</div>
+	</div>
 	<script src="{{ mix('js/customize.js') }}"></script>
   
 	<script>

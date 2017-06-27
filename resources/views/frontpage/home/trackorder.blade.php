@@ -2,7 +2,7 @@
 @section('content')
     <div class="main-content section">
         <div class="container">
-            <h1 class="text-left">Lacak Pesanan</h1>
+            <h3 class="sc-title">Lacak Pesanan</h3>
             <p>Lacak Pesanan Anda</p>
             <form class="form row" id="form-tracker" method="post">
                 <input type="text" class="hiddenRecaptcha required" style="visibility: hidden" name="hiddenRecaptcha" id="hiddenRecaptcha">
@@ -14,7 +14,7 @@
                     <div style="margin-bottom: 1em">
                         {!! Recaptcha::render() !!}
                     </div>
-                    <button type="submit" class="btn btn-info disabled">Track Order</button>
+                    <button type="submit" class="btn btn-danger disabled">Track Order</button>
                 </div>
             </form>
         </div>

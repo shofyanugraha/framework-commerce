@@ -17,17 +17,17 @@
 </div>
 <div class="main-content section">
 	<div class="container">
-		<h1 class="sc-title">New Arival</h1>
-		<div class="row">
+		<h1 class="sc-title text-center">New Arival</h1>
+		<div class="row product-holder">
 			@forelse($latest as $product)
 				<div class="col-md-3">
 					<div class="product text-center">
 						<div class="product-image">
-							<img src="{{ isset($product->details[0]->front_image) ? $product->details[0]->front_image->item->thumb : '' }}" class="img-responsive">
+							<a href="{{ $product->slug }}"><img src="{{ isset($product->details[0]->front_image) ? $product->details[0]->front_image->item->thumb : '' }}" class="img-responsive"></a>
 						</div>
 						<div class="product-title h4"><a href="{{ $product->slug }}">{{ $product->name}}</a></div>
 						<div class="product-price">Rp {{ isset($product->details[0]->sale_price) ? number_format($product->details[0]->sale_price, 0, ',', '.') : '' }}</div>
-						<a href="{{ $product->slug }}" class="btn  btn-primary">Lihat Detail</a>
+						<a href="{{ $product->slug }}" class="btn  btn-primary">Detail</a>
 					</div>
 				</div>
 			@empty
@@ -38,36 +38,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-2 col-md-offset-5">
-				<a href="#" class="btn btn-block btn-danger">Lainnya</a>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="main-content section">
-	<div class="container">
-		<h1 class="sc-title">Trending</h1>
-		<div class="row">
-			@forelse($latest as $product)
-				<div class="col-md-3">
-					<div class="product text-center">
-						<div class="product-image">
-							<img src="{{ isset($product->details[0]->front_image) ? $product->details[0]->front_image->item->thumb : '' }}" class="img-responsive">
-						</div>
-						<div class="product-title h4"><a href="{{ $product->slug }}">{{ $product->name}}</a></div>
-						<div class="product-price">Rp {{ isset($product->details[0]->sale_price) ? number_format($product->details[0]->sale_price, 0, ',', '.') : '' }}</div>
-						<a href="{{ $product->slug }}" class="btn  btn-primary">Lihat Detail</a>
-					</div>
-				</div>
-			@empty
-				<div class="col-md-12 text-center">
-					No Product
-				</div>
-			@endforelse
-		</div>
-		<div class="row">
-			<div class="col-md-2 col-md-offset-5">
-				<a href="#" class="btn btn-block btn-danger">Lainnya</a>
+				<a href="{{ url('/new-arrival') }}" class="btn btn-block btn-danger">Lainnya</a>
 			</div>
 		</div>
 	</div>
@@ -75,16 +46,12 @@
 
 @endsection
 @section('scripts')
-<!-- External libraries: jQuery & GreenSock -->
 <script src="{{ asset('plugins/layerslider/js/greensock.js') }}" type="text/javascript"></script>
-<!-- LayerSlider script files -->
 <script src="{{ asset('plugins/layerslider/js/layerslider.transitions.js') }}" type="text/javascript"></script>
 <script src="{{ asset('plugins/layerslider/js/layerslider.kreaturamedia.jquery.js') }}" type="text/javascript"></script>
 
 <script type="text/javascript">
 	$(document).ready(function(){
- 
-        // Calling LayerSlider on the target element
         $('#layerslider').layerSlider({
  			skinsPath: 'plugins/layerslider/skins/',
             skin: 'v6',

@@ -87,7 +87,14 @@ class PageController extends Controller
     }
 
     public function confirmation(){
-        return view('frontpage.campaign.confirmation');
+        $res = Curl::to(env('API_URL').'master/bank')
+            ->asJson()
+            ->get();
+        $bank = null;
+        if (isset($res) && $res->meta->status == TRUE) {
+            $bank = $res->data;
+        }
+        return view('frontpage.campaign.confirmation', compact('bank'));
     }
 
     public function orderSuccess($code){

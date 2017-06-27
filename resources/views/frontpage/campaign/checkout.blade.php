@@ -311,7 +311,7 @@
                           //  'Authorization': 'Bearer '
                         //}
                     }).then(function(response) {
-
+                        $('.overlay').fadeout();
                         if (response.data.meta.status == true) {
                             window._storage.remove("item-{{ $code  }}");
                             window._storage.remove("timeframe-{{ $code  }}");

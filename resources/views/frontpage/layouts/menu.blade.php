@@ -1,5 +1,4 @@
 <ul class="nav navbar-nav navbar-right main-nav">
-    <!-- divider -->
     <li class="active">
         <a href="{{ url('/') }}">Home</a>
     </li>
@@ -29,6 +28,5 @@
             <a href="#" class="col-xs-12 col-sm-6 col-md-3">Accessories</a>
         </div>
     </li>
-    <li class="divider"></li>
 </ul>
 

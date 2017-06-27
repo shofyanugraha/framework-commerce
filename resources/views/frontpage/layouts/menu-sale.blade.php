@@ -1,4 +1,9 @@
-<ul class="nav navbar-nav navbar-left main-nav">
+<ul class="nav navbar-nav navbar-right nav-user">
+    <li class="cart-menu">
+        <a href="#" data-toggle="modal" data-target="#modalCart"><i class="fa fa-shopping-bag"></i><span id="item-counter">0</span></a>
+    </li>
+</ul>
+<ul class="nav navbar-nav navbar-right main-nav">
     <!-- divider -->
     <li class="active">
         <a href="{{ url('/') }}">Home</a>
@@ -30,10 +35,4 @@
         </div>
     </li>
     <li class="divider"></li>
-</ul>
-
-<ul class="nav navbar-nav navbar-right nav-user">
-    <li class="cart-menu">
-        <a href="#" data-toggle="modal" data-target="#modalCart"><i class="fa fa-shopping-bag"></i><span id="item-counter">0</span></a>
-    </li>
 </ul>
