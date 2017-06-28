@@ -1,0 +1,147 @@
+header {
+	z-index: 99999;
+}
+.top-nav {
+	background: #1c1c1c;
+	.navbar-nav > li > a {
+		transition: all .5s ease;
+		color: #fff;
+		font-size: 12px;
+		padding: 12px 15px;
+		height:auto;
+	}
+	.nav > li > a:hover, .nav > li > a:focus {
+		background-color: #3c3c3c;
+	}
+	.nav > li:first-child {
+		border-right: 1px solid #2c2c2c;
+	}
+}
+
+
+.main-menu {
+	background: #fff;
+	border-radius: 0;
+	border-bottom: 1px solid #cfcccc;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+	margin-bottom:0;
+	.navbar-brand {
+		position: absolute;
+		height: auto;
+		width: 108px;
+		padding: 0;
+		top:-22px;
+		.header-image-responsive{
+			max-height: 100%;
+			max-width: 100%;
+		}
+		&.navbar-brand-fixed{
+			width: 60px;
+			top: 5px;
+		}
+	}
+	.nav > li > a:hover, .nav > li > a:focus {
+		background:transparent;
+	}
+}
+
+.main-nav.navbar-nav, .nav-user.navbar-nav  {
+	margin: 15px 0;
+	margin-right: -15px;
+	li:last-child a{
+		padding-right:15px;
+	}
+    > li > a{
+		height: auto!important;
+    	font-size: 20px;
+    	font-weight: 600;
+    	text-transform: uppercase;
+    	color: #000;
+    	padding: 15px 25px;
+    	transition: all .3s ease;
+		font-family: 'Oswald', sans-serif;
+    	&:hover,  &:focus {
+    		color: #ec000f;
+    	}
+	}
+	> .active > a, > .active > a:hover, > .active > a:focus {
+		background: transparent;
+		color: #ec000f;
+	}
+}
+.nav-user.navbar-nav {
+	margin: 15px 0;
+	.cart-menu {
+		border-left: 1px solid #cfcccc;
+		a {
+			padding: 10px 30px;
+			transition: all .3 ease;
+		}
+		a:hover {
+			opacity: .5;
+			background: transparent;
+		}
+		position: relative;
+		i {
+			color: #ec000f;
+			font-size: 24px;
+		}
+		span {
+			font-size: 10px;
+			position: absolute;
+			top: 0;
+			right: 5px;
+			background: #000;
+			color: #fff;
+			padding: 0px 5px;
+			border-radius: 50%;
+		}
+	}
+}
+//megamenu
+.dropdown-menu{
+	a{
+		color: #000;
+		padding: 15px 0;
+		&:hover{
+			background:#eee;
+			color:#ec000f;
+			text-decoration: none;
+		}
+		&:before{
+			content: "";
+			margin-left: 15px;
+		}
+	}
+}
+
+.main-nav{
+	.separator {
+		position: relative;
+		&:before, &:after {
+			left: 100%;
+			top: 50%;
+			border: solid transparent;
+			content: " ";
+			height: 0;
+			width: 0;
+			position: absolute;
+			pointer-events: none;
+			margin-top:-16px;
+		}
+		&:before {
+			margin-left:1px;
+			border-style: solid;
+			border-width: 43px 0 41px 20px;
+			border-color: transparent transparent transparent #ccc;
+		}
+		&:after {
+			border-style: solid;
+			border-width: 43px 0 41px 20px;
+			border-color: transparent transparent transparent #fff;
+		}
+		+ li {
+			margin-left : 10px;
+		}
+	}
+}

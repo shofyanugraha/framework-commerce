@@ -1,5 +1,4 @@
 let mix = require('laravel-mix');
-var path = require('path');
 
 /*
  |--------------------------------------------------------------------------
@@ -12,13 +11,20 @@ var path = require('path');
  |
  */
 
-mix.sass('resources/assets/scss/theme/default/app.scss', 'public/themes/default/css').version().sourceMaps();
+mix.sass('resources/assets/scss/app.scss', 'public/css').sourceMaps()
+    .copy('node_modules/sweetalert/dist/sweetalert.css', 'public/css/sweetalert.css')
+    .copy('node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css', 'public/css/datepicker.css').version();
 
 mix.scripts([
-   'node_modules/jquery/dist/jquery.min.js', 
-   'node_modules/bootstrap/dist/js/bootstrap.min.js'
- ], 'public/js/app.js').version().sourceMaps();
-
-mix.browserSync({
-    proxy: 'calcio.dev'
-});
+    'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/bootstrap/dist/js/bootstrap.min.js',
+    'node_modules/axios/dist/axios.js',
+    'node_modules/sweetalert/dist/sweetalert.min.js',
+    'node_modules/jquery-price-format/jquery.priceformat.min.js',
+    'node_modules/magnify/dist/js/jquery.magnify.js',
+    'node_modules/jquery-validation/dist/jquery.validate.min.js',
+    'node_modules/js-storage/js.storage.min.js',
+    'node_modules/@fengyuanchen/datepicker/dist/datepicker.min.js',
+    'public/js/jquery.downCount.js',
+    'public/js/app.js',
+    'node_modules/form-serializer/dist/jquery.serialize-object.min.js'], 'public/js/customize.js').sourceMaps();

@@ -1,4 +1,3 @@
-
 /*
  |--------------------------------------------------------------------------
  | Laravel Spark Bootstrap
@@ -13,6 +12,42 @@
  | customize this script as you desire and load your own components.
  |
  */
+require('spark-bootstrap');
 
-require('bootstrap');
+// Load JS Storage
+require('../../../node_modules/js-cookie/src/js.cookie');
+require('../../../node_modules/js-storage/js.storage.min');
 
+// Load Jquery Priceformat
+require('../../../node_modules/jquery-price-format/jquery.priceformat.min.js');
+
+// Load Jquery downCount
+require('../../../public/plugins/downcount/jquery.downCount.js');
+
+// Load Jquery downCount
+require('../../../public/plugins/downcount/jquery.downCount.js');
+
+// Load Jquery magnify
+require('../../../node_modules/magnify/dist/js/jquery.magnify.js');
+
+// Global Vars
+window.app = {
+    host: "",
+    methods: {
+        priceFormat: function(){
+            $('.priceformat').priceFormat({
+                prefix: 'Rp. ',
+                centsSeparator: ',',
+                centsLimit: 0,
+                thousandsSeparator: '.'
+            })
+        }
+    }
+};
+
+
+require('./components/bootstrap');
+
+var app = new Vue({
+    mixins: [require('spark')]
+});
