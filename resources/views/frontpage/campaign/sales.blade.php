@@ -171,7 +171,7 @@
 
             var pixel = window._storage.get("pixel-{{ base64_encode($data->id)  }}");
 
-            if (timeframe === undefined || timeframe === null){
+            if (pixel === undefined || pixel === null){
                 window._storage.set("pixel-{{ base64_encode($data->id)  }}");
             }
 
