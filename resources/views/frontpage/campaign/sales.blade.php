@@ -183,7 +183,6 @@
                 facebook.createEvent(window.pixelData.id,'PageView', { 'campaign_url' : window.pixelData.slug, 'content_name': window.pixelData.name });
                 facebook.createEvent(window.pixelData.id,'ViewContent', { 'campaign_url' : window.pixelData.slug,'content_name': window.pixelData.name  });
             }
-            }
 
 
             loadCart();
