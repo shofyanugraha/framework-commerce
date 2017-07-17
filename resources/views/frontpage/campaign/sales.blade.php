@@ -170,14 +170,19 @@
         $(document).ready(function() {
 
             var pixel = window._storage.get("pixel-{{ base64_encode($data->id)  }}");
+            window.pixelData = {};
+            window.pixelData.id = '{{ $data->pixel }}';
+            window.pixelData.slug = '{{ $data->slug }}';
+            window.pixelData.name = '{{ $data->name }}';
 
             if (pixel === undefined || pixel === null){
-                window._storage.set("pixel-{{ base64_encode($data->id)  }}");
+                window._storage.set("pixel-{{ base64_encode($data->id)  }}", window.pixelData);
             }
 
             if (typeof facebook != 'undefined') {
-                facebook.createEvent('{{ $data->pixel }}', 'PageView', { 'campaign_url' : '{{ $data->slug }}', 'content_name': '{{ $data->name}}' });
-                facebook.createEvent('{{ $data->pixel }}', 'ViewContent', { 'campaign_url' : '{{ $data->slug}}','content_name': '{{ $data->name }}'  });
+                facebook.createEvent(window.pixelData.id,'PageView', { 'campaign_url' : window.pixelData.slug, 'content_name': window.pixelData.name });
+                facebook.createEvent(window.pixelData.id,'ViewContent', { 'campaign_url' : window.pixelData.slug,'content_name': window.pixelData.name  });
+            }
             }
 
 
@@ -199,8 +204,7 @@
             $('#product-form').submit(function(e) {
                 e.preventDefault();
                 if (typeof facebook != 'undefined') {
-                    facebook.createEvent('{{ $data->pixel }}','PageView', { 'campaign_url' : '{{ $data->slug }}', 'content_name': '{{ $data->name}}' });
-                    facebook.createEvent('{{ $data->pixel }}','ViewContent', { 'campaign_url' : '{{ $data->slug}}','content_name': '{{ $data->name }}'  });
+                    facebook.createEvent(window.pixelData.id,'AddToCart', { 'campaign_url' : window.pixelData.slug, 'content_name': window.pixelData.name });
                 }
 
                 $('.validation.size_id').html('');
