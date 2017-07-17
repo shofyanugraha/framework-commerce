@@ -108,16 +108,15 @@
     <div class="container">
         <div class="row">
             <div class="col-md-5 user-profile">
-                <h4>Dijual Oleh</h4>
-                <div class="row">
-                    <div class="col-md-2" style="padding-right: 0;">
-                        <a href="{{ url('/'.$data->user->username) }}"><img src="{{ $data->user->photo_url ? $data->user->photo_url : asset('img/user.png')  }}" alt="Photo {{ $data->user->name }}" class="img-responsive img-thumbnail"></a>
-                    </div>
-                    <div class="col-md-10">
-                        <h5><a href="{{ url('/'.$data->user->username) }}">{{ $data->user->name}}</a></h5>
-                        <a href="{{ url('/'.$data->user->username) }}" class="btn btn-danger">Lihat Lainnya</a>
-                    </div>
-                </div>
+                {{--<h4>Dijual Oleh</h4>--}}
+                {{--<div class="row">--}}
+                    {{--<div class="col-md-2" style="padding-right: 0;">--}}
+                        {{--<a href="{{ url('/'.$data->user->username) }}"><img src="{{ $data->user->photo_url ? $data->user->photo_url : asset('img/user.png')  }}" alt="Photo {{ $data->user->name }}" class="img-responsive img-thumbnail"></a>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-md-10">--}}
+                        {{--<h5><a href="{{ url('/'.$data->user->username) }}">{{ $data->user->name}}</a></h5>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
             </div>
             <div class="col-md-7 text-right">
                     <!-- Nav tabs -->
@@ -132,12 +131,6 @@
                             <a href="https://api.whatsapp.com/send?phone={{ $data->whatsapp }}&text=Saya tertarik dengan Produk {{ $data->name }}" target="_blank">
                                 <i class="fa fa-whatsapp"></i>
                                 <span>Whatsapp</span>
-                            </a>
-                        </li>
-                        <li class="bg-fb">
-                            <a>
-                                <i class="fa fa-facebook"></i>
-                                <span>Facebook</span>
                             </a>
                         </li>
                     </ul>
