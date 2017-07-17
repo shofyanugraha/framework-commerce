@@ -168,6 +168,19 @@
     <script>
         window._storage = Storages.localStorage;
         $(document).ready(function() {
+
+            var pixel = window._storage.get("pixel-{{ base64_encode($data->id)  }}");
+
+            if (timeframe === undefined || timeframe === null){
+                window._storage.set("pixel-{{ base64_encode($data->id)  }}");
+            }
+
+            if (typeof facebook != 'undefined') {
+                facebook.createEvent('{{ $data->pixel }}', 'PageView', { 'campaign_url' : '{{ $data->slug }}', 'content_name': '{{ $data->name}}' });
+                facebook.createEvent('{{ $data->pixel }}', 'ViewContent', { 'campaign_url' : '{{ $data->slug}}','content_name': '{{ $data->name }}'  });
+            }
+
+
             loadCart();
             $('.btnCheckout').attr('href','{{ url('/checkout/'.base64_encode($data->id))  }}')
             $('.countdown').downCount({
@@ -185,6 +198,11 @@
 
             $('#product-form').submit(function(e) {
                 e.preventDefault();
+                if (typeof facebook != 'undefined') {
+                    facebook.createEvent('{{ $data->pixel }}','PageView', { 'campaign_url' : '{{ $data->slug }}', 'content_name': '{{ $data->name}}' });
+                    facebook.createEvent('{{ $data->pixel }}','ViewContent', { 'campaign_url' : '{{ $data->slug}}','content_name': '{{ $data->name }}'  });
+                }
+
                 $('.validation.size_id').html('');
                 $('.validation.color').html('');
                 var validation = true;
