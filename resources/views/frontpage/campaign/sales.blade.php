@@ -27,7 +27,7 @@
                         <div class="col-xs-10">
                             <div class="image-preview">
                                 <div class="preview-zoom">
-                                    <a href="{{ $data->details[0]->front_image->item->large}}">
+                                    <a href="{{ $data->details[0]->front_image->item->medium}}">
                                         <img src="{{ $data->details[0]->front_image->item->medium}}" class="zoom img-responsive">
                                     </a>
                                 </div>
@@ -129,7 +129,7 @@
                             </a>
                         </li>
                         <li class="bg-wa">
-                            <a>
+                            <a href="https://api.whatsapp.com/send?phone={{ $data->whatsapp }}&text=Saya tertarik dengan Produk {{ $data->name }}" target="_blank">
                                 <i class="fa fa-whatsapp"></i>
                                 <span>Whatsapp</span>
                             </a>
@@ -272,8 +272,8 @@
                 $('input[name=front_image]').val(frontImage.thumb);
                 $('input[name=back_image]').val(backImage.thumb);
                 $('.zoom').attr('src', frontImage.medium);
-                $('.preview-zoom').attr('href', frontImage.large);
-                $('.magnify-lens').css({backgroundImage: 'url('+ frontImage.large+')'});
+                $('.preview-zoom').attr('href', frontImage.medium);
+                $('.magnify-lens').css({backgroundImage: 'url('+ frontImage.medium+')'});
                 $('.image-preview-buttons a').removeClass('active');
                 $('.image-preview-buttons a.front').addClass('active');
                 $('.image-preview-buttons a.front').attr('data-image', $(this).attr('data-front'));
@@ -294,8 +294,8 @@
                 $('.image-preview-buttons a').removeClass('active');
                 $(this).addClass('active');
                 $('img.zoom').attr('src', image.medium);
-                $('.preview-zoom').attr('href', image.large);
-                $('.magnify-lens').css({backgroundImage: 'url('+ image.large+')'});
+                $('.preview-zoom').attr('href', image.medium);
+                $('.magnify-lens').css({backgroundImage: 'url('+ image.medium+')'});
 
             });
             $('.select-size').click(function() {
