@@ -6,7 +6,7 @@
                 <div class="col-md-4 col-md-offset-4">
                     <div class="panel">
                         <div class="panel-body">
-                            <h3 class="sc-title">Konfirmasi Pesanan</h3>
+                            <h3 class="sc-title text-center">Konfirmasi Pesanan</h3>
                             <form action="#" mehthod="post" id="form-confirmation">
                                 <div class="form-group">
                                     <label class="control-label">Kode Pesanan <span class="required">*</span></label>
@@ -76,14 +76,16 @@
                         //  'Authorization': 'Bearer '
                         //}
                     }).then(function (response) {
-                        $('.overlay').fadeout();
+                        $('.overlay').fadeOut();
                         if (response.data.meta.status == true) {
                             swal({
                                 title: 'Konfirmasi Berhasil!',
                                 text: 'Terimakasih telah melakukan konfirmasi, silahkan tunggu informasi selanjutnya',
                                 type: 'success'
                             }, function () {
-                                window.location.reload();
+                                var $form=$(document.createElement('form')).css({display:'none'}).attr("method","POST").attr("action","{{ url('/track-order') }}/"+response.data.data.code);
+                                $("body").append($form);
+                                $form.submit();
                             });
                         } else {
                             swal({

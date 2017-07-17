@@ -57,6 +57,10 @@ class PageController extends Controller
         return view('frontpage.home.trackorder');
     }
 
+    public function trackorderGet($code){
+        return view('frontpage.home.trackorder', compact('code'));
+    }
+
     public function postTrackorder($code){
         $param = [];
         $param['attribute'] = 'receiver_phone,address,email';

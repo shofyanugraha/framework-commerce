@@ -25,7 +25,7 @@
                     <a href="{{ url('/track-order') }}">Lacak Pesanan</a>
                 </li>
                 <li>
-                    <a href="{{ url('/confirmation-order') }}">Konfirmasi Pembayaran</a>
+                    <a href="{{ url('/confirmation') }}">Konfirmasi Pembayaran</a>
                 </li>
             </ul>
         </div>
@@ -150,7 +150,7 @@
             </div>
             <div class="modal-footer">
                 <a href="#" class="btn btn-info btnClose">Tambah Barang</a>
-                <a href="/checkout" class="btn btn-primary btnCheckout">Lakukan Pembayarang</a>
+                <a href="/checkout" class="btn btn-primary btnCheckout">Lakukan Pembayaran</a>
             </div>
         </div>
     </div>
