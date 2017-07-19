@@ -59,23 +59,27 @@
 		<div class="footer-widget">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-3 widget">
-						<h4 class="title">Calcio Outfit</h4>
-						<ul class="fa-ul">
-							<li><i class="fa fa-li fa-map-marker"></i> Jl. Kadungora No. 49<br/> Garut, Indonesia</li>
-							<li><i class="fa fa-li fa-envelope"></i> <a href="#">helo@calciooutfit.com</a></li>
-							<li><i class="fa fa-li fa-phone"></i> <a href="#">(022)2131231</a></li>
-						</ul>
+					<div class="col-md-6 widget">
+						<div class="row">
+							<div class="col-xs-6">
+								<h4 class="title">Calcio Outfit</h4>
+								<ul class="fa-ul">
+									<li><i class="fa fa-li fa-map-marker"></i> Jl. Kadungora No. 49<br/> Garut, Indonesia</li>
+									<li><i class="fa fa-li fa-envelope"></i> <a href="#">helo@calciooutfit.com</a></li>
+									<li><i class="fa fa-li fa-phone"></i> <a href="#">(022)2131231</a></li>
+								</ul>
+							</div>
+							<div class="col-xs-6">
+								<ul>
+									<li><a href="#">Tentang Kami</a></li>
+									<li><a href="#">Kontak</a></li>
+									<li><a href="#">Lacak Pesanan</a></li>
+									<li><a href="#">Konfirmasi Pembayaran</a></li>
+								</ul>
+							</div>
+						</div>
 					</div>
-					<div class="col-md-3 widget">
-						<ul>
-							<li><a href="#">Tentang Kami</a></li>
-							<li><a href="#">Kontak</a></li>
-							<li><a href="#">Lacak Pesanan</a></li>
-							<li><a href="#">Konfirmasi Pembayaran</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3 widget">
+					<div class="col-md-3 widget col-xs-6">
 						<h4 class="title">Newsletter</h4>
 						<p>Daftarkan email kamu, untuk mendapatkan penawaran menarik dari <a class="red" href="{{ url('/') }}">calciootfit.com</a></p>
 						<form class="form form-subscribe">
@@ -83,7 +87,7 @@
 							<button type="submit"><i class="fa fa-long-arrow-right"></i></button>
 						</form>
 					</div>
-					<div class="col-md-3 widget">
+					<div class="col-md-3 widget col-xs-6">
 						<h5 class="title">Jasa Pengiriman</h5>
 						<p>
 							<img src="{{ asset('img/jne.png') }}">
