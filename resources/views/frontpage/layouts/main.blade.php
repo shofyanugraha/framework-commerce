@@ -21,12 +21,13 @@
 		<div class="top-nav">
 			<div class="container">
 				<ul class="nav navbar-nav navbar-right">
-					<li class="active">
-						<a href="{{ url('/track-order') }}">Lacak Pesanan</a>
-					</li>
-					<li>
-						<a href="{{ url('/confirmation') }}">Konfirmasi Pembayaran</a>
-					</li>
+					<li><a href="">&nbsp;</a></li>
+					{{--<li class="active">--}}
+						{{--<a href="{{ url('/track-order') }}">Lacak Pesanan</a>--}}
+					{{--</li>--}}
+					{{--<li>--}}
+						{{--<a href="{{ url('/confirmation') }}">Konfirmasi Pembayaran</a>--}}
+					{{--</li>--}}
 				</ul>
 			</div>
 		</div>
@@ -39,7 +40,7 @@
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('img/logo.png') }}"></a>
+					<a class="navbar-brand" style="z-index:99999" href="{{ url('/') }}"><img src="{{ asset('img/logo.png') }}"></a>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse main-nav">

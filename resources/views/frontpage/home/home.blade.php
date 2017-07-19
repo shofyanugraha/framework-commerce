@@ -4,20 +4,26 @@
 @endsection
 @section('content')
 <div id="slider">
-	<div id="layerslider" style="width:1280px;height:550px;max-width: 1280px;">
+	<div id="layerslider" style="width:1300px;height:550px;">
 		 <!-- First slide -->
-	    <div class="ls-slide" data-ls="slidedelay:5000;transition2d:75,79;">
-	        <img src="images/blank.png" class="ls-bg" alt="Slide background"/>
-	        <img src="{{ asset('/images/madrid-front.png') }}" class="ls-l" style="top:80px;left:240px;font-weight: 300;font-size:40px;color:#000;white-space: nowrap;" data-ls="offsetxin:-100%;durationin:1000;easingin:easeOutBack;transformoriginin:left 0 0;"/>
-	        <h3 class="ls-l" style="top:150px;left:660px;font-weight: 300;font-size:40px;color:#000;white-space: nowrap;" data-ls="offsetxin:	100%;durationin:1000;easingin:easeOutBack;transformoriginin:right 100% 0;">DAPATKAN PRODUK</h1>
-	        <h3 class="ls-l" style="top:210px;left:660px;font-weight: 600;font-size:40px;color:#ec000f;white-space: nowrap;" data-ls="offsetxin:	100%;durationin:1000;easingin:easeOutBack;transformoriginin:right 100% 0;">WIND RUNNER</h1>
-	        <div href="#" class="ls-l hidden-sm hidden-xs" style="top:270px;left:660px;white-space: nowrap;" data-ls="offsetxin:	100%;durationin:1000;easingin:easeOutBack;transformoriginin:right 100% 0;"><a href="#" class="btn btn-primary btn-lg">SELENGKAPNYA</a></div>
+	    <div class="ls-slide" data-ls="slidedelay:5000;transition2d:all;">
+	        <img src="images/slider/1.jpg" class="ls-bg" alt="Slide background"/>
+		</div>
+		<div class="ls-slide" data-ls="duration:4000;transition2d:11;kenburnsscale:1.2;">
+			<img src="images/slider/video.jpg" class="ls-bg"/>
+			<div style="top:0px;left:0px; right:0px; margin: auto;" class="ls-l" data-ls="durationin:500;durationout:400;parallaxlevel:0;"><iframe width="1300" height="550" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen data-src="https://www.youtube.com/embed/49hHw_vH8xI"></iframe></div>
+		</div>
+		<div class="ls-slide" data-ls="slidedelay:5000;transition2d:all;">
+	        <img src="images/slider/2.jpg" class="ls-bg" alt="Slide background"/>
+		</div>
+		<div class="ls-slide" data-ls="slidedelay:5000;transition2d:all;">
+	        <img src="images/slider/3.jpg" class="ls-bg" alt="Slide background"/>
 		</div>
 	</div>
 </div>
 <div class="main-content section">
 	<div class="container">
-		<h1 class="sc-title text-center">New Arival</h1>
+		<h1 class="sc-title text-center">New Arrival</h1>
 		<div class="row product-holder">
 			@forelse($latest as $product)
 				<div class="col-md-3">

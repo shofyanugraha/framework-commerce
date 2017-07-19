@@ -107,18 +107,7 @@
 <div class="separator">
     <div class="container">
         <div class="row">
-            <div class="col-md-5 user-profile">
-                {{--<h4>Dijual Oleh</h4>--}}
-                {{--<div class="row">--}}
-                    {{--<div class="col-md-2" style="padding-right: 0;">--}}
-                        {{--<a href="{{ url('/'.$data->user->username) }}"><img src="{{ $data->user->photo_url ? $data->user->photo_url : asset('img/user.png')  }}" alt="Photo {{ $data->user->name }}" class="img-responsive img-thumbnail"></a>--}}
-                    {{--</div>--}}
-                    {{--<div class="col-md-10">--}}
-                        {{--<h5><a href="{{ url('/'.$data->user->username) }}">{{ $data->user->name}}</a></h5>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            </div>
-            <div class="col-md-7 text-right">
+            <div class="col-md-7 text-left">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="bg-desc active" role="presentation" class="active">
@@ -130,7 +119,7 @@
                         <li class="bg-wa">
                             <a href="https://api.whatsapp.com/send?phone={{ $data->whatsapp }}&text=Saya tertarik dengan Produk {{ $data->name }}" target="_blank">
                                 <i class="fa fa-whatsapp"></i>
-                                <span>Whatsapp</span>
+                                <span>Chat Sekarang</span>
                             </a>
                         </li>
                     </ul>
