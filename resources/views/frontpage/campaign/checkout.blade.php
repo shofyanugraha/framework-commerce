@@ -66,30 +66,14 @@
                     <h5>Bank</h5>
                     <p>Silahkan pilih salah satu bank yang akan digunakan</p>
                     <div class="row bank-action">
+                        @foreach($banks as $bank)
                         <div class="col-md-3">
-                            <label for="bank-bca" class="btn-bank">BCA</label>
+                            <label for="bank-{{strtolower($bank->name)}}" class="btn-bank">{{$bank->name}}</label>
                             <div class="bank-option text-center">
-                                <input id="bank-bca" class="bankoption" type="radio" name="bank_id" value="2">
+                                <input id="bank-{{strtolower($bank->name)}}" class="bankoption" type="radio" name="bank_id" value="{{$bank->id}}">
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <label for="bank-mandiri" class="btn-bank">Mandiri</label>
-                            <div class="bank-option text-center">
-                                <input id="bank-mandiri" class="bankoption" type="radio" name="bank_id" value="3">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label for="bank-bni" class="btn-bank">BNI</label>
-                            <div class="bank-option text-center">
-                                <input id="bank-bni" class="bankoption" type="radio" name="bank_id" value="4">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <label for="bank-bri" class="btn-bank">BRI</label>
-                            <div class="bank-option text-center">
-                                <input id="bank-bri" class="bankoption" type="radio" name="bank_id" value="5">
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                     <button type="submit" class="btn btn-info btn-block" id="btnProceed">Proses Pesanan</button>
                 </form>

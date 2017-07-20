@@ -36,6 +36,8 @@ class PageController extends Controller
         if (isset($res) && $res->meta->status == TRUE) {
             $data = $res->data;
         }
+
+
         return view('frontpage.campaign.sales', compact('data'));
     }
     public function checkout($code){
@@ -47,7 +49,18 @@ class PageController extends Controller
             $province = $res->data;
         }
 
-        return view('frontpage.campaign.checkout', compact('code', 'province'));
+        $param = [];
+        $param['offset'] = 10;
+        $res = Curl::to(env('API_URL').'master/bank')
+            ->withData($param)
+            ->asJson()
+            ->get();
+        $banks = null;
+        if (isset($res) && $res->meta->status == TRUE) {
+            $banks = $res->data;
+        }
+
+        return view('frontpage.campaign.checkout', compact('code', 'province', 'banks'));
     }
     public function cart(){
         return view('frontpage.campaign.cart');
