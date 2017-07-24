@@ -68,16 +68,16 @@
                                         <img src="{{ $detail->back_image->item->thumb }}" width="50">
                                         <span><a href="{{ url( $detail->product->slug ) }} target="_blank" title="{{ $detail->product->name }}">{{ $detail->product->name }}</a>
                                     </td>
-                                    <td>{{ $detail->product_size[0]->name }}</td>
+                                    <td>{{ $detail->size[0]->name }}</td>
                                     <td>
-                                        <span class="priceformat">{{ $detail->sale_price + $detail->product_size[0]->additional_cost }}</span>
+                                        <span class="priceformat">{{ $detail->sale_price + $detail->size[0]->additional_cost }}</span>
                                     </td>
                                     <td>
                                         {{ $detail->pivot->quantity }}
                                     </td>
 
                                     <td>
-                                        <span class="priceformat">{{ ($detail->sale_price + $detail->product_size[0]->additional_cost) * $detail->pivot->quantity }}</span>
+                                        <span class="priceformat">{{ ($detail->sale_price + $detail->size[0]->additional_cost) * $detail->pivot->quantity }}</span>
 
                                     </td>
                                 </tr>
