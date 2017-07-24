@@ -23,6 +23,14 @@
   }
 }
 
+.text-red {
+  color:#ec000f;
+}
+
+.head-bg {
+  height: 300px; background-size:cover;
+}
+
 
 
 #slider {
@@ -62,11 +70,15 @@
 }
 .product {
   opacity:.8;
+  margin-bottom: 40px;
   .product-title {
     font-family: "Oswald", sans-serif;
     text-transform: uppercase;
     font-size: 22px;
     margin-bottom: .5em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     a{
       color: #000;
       text-decoration: none;

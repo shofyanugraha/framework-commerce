@@ -139,7 +139,7 @@
         <div class="row">
             <div class="col-md-6 text-muted">
                 <h5>Informasi Pengiriman</h5>
-                <p>Barang akan diproduksi selambat-lambatnya 2-3 minggu setelah masa kampanye selesai, dan pengiriman barang dilaksanakan 1-2 hari dari proses produksi selesai</p>
+                <p>Barang akan diproduksi selambat-lambatnya 3-4 minggu setelah masa pre-order selesai, dan pengiriman barang dilaksanakan 1-2 hari dari proses produksi selesai</p>
             </div>
         </div>
     </div>

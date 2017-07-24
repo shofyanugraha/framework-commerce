@@ -26,5 +26,6 @@ mix.scripts([
     'node_modules/js-storage/js.storage.min.js',
     'node_modules/@fengyuanchen/datepicker/dist/datepicker.min.js',
     'public/js/jquery.downCount.js',
+    'public/js/parallax.min.js',
     'public/js/app.js',
     'node_modules/form-serializer/dist/jquery.serialize-object.min.js'], 'public/js/customize.js').sourceMaps();

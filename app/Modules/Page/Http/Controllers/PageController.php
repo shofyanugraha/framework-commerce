@@ -24,6 +24,10 @@ class PageController extends Controller
         }
         return view('frontpage.home.home', compact('latest'));
     }
+
+    public function about(){
+        return view('frontpage.page.about');
+    }
     public function sales($username, $slug){
         $param = [];
         $param['offset'] = 4;

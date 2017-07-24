@@ -18,7 +18,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Total Transfer <span class="required">*</span></label>
-                                    <input type="text" name="total_transfer" required class="form-control" placeholder="Total Uang Yang Ditransfer">
+                                    <input type="text" name="total_transfer" required class="form-control priceformat" placeholder="Total Uang Yang Ditransfer">
                                 </div>
 
                                 <div class="form-group">
@@ -54,6 +54,12 @@
 @section('scripts')
     <script>
         $(document).ready(function() {
+            $('.priceformat').priceFormat({
+                prefix: 'Rp ',
+                centsLimit: 0,
+                thousandsSeparator: '.'
+            });
+
             $('[data-toggle="datepicker"]').datepicker({
                 autoHide: true,
                 endDate: new Date(),
@@ -71,6 +77,10 @@
                 submitHandler: function (form) {
                     $('.overlay').fadeIn();
                     var data = $('#form-confirmation').serializeObject();
+
+                    var totalTrf = $('input[name=total_transfer]').unmask();
+                    data.total_transfer = totalTrf;
+
                     axios.post(app.host + 'confirmation', data, {
                         //headers: {
                         //  'Authorization': 'Bearer '

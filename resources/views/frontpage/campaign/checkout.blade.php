@@ -13,7 +13,7 @@
                     <input type="hidden" name="courier">
                     <input type="hidden" name="service">
                     <input type="hidden" name="weight">
-                    <input type="hidden" name="shipping_cost">
+                    <input type="hidden" name="shipping_cost" required>
                     <h3>Informasi Pembeli</h3>
                     <div class="form-group">
                         <input required type="email" id="email" name="email" class="form-control" placeholder="Email">
@@ -243,7 +243,11 @@
                     success: function(result) {
                         $('.overlay').fadeOut();
                         if (result.status === false) {
-                            bootbox.alert('Mohon maaf daerah anda belum terjangkau oleh kurir kami');
+                            swal({
+                                    title: 'Oops',
+                                    text: 'Silahkan kontak cs, untuk memperbarui data ongkir',
+                                    type: 'error'
+                                });
                             $('#btnProceed').attr('disabled', 'disabled');
                         } else {
                             window.shippingCost = result.data.cost;
@@ -265,7 +269,11 @@
                     },
                     error: function(result) {
                         $('.overlay').fadeOut();
-                        bootbox.alert('Mohon maaf daerah anda belum terjangkau oleh kurir kami');
+                        swal({
+                            title: 'Oops',
+                            text: 'Terjadi kesalahan dalam sistem, cobalah beberapa saat lagi',
+                            type: 'error'
+                        });
                     }
                 });
             });
@@ -302,11 +310,9 @@
                             window.location = '{{ url('/order-success') }}/'+response.data.data.code;
                         } else {
                             swal({
-                                title: 'Failed!',
-                                text: 'order failed!',
-                                type: 'success'
-                            }, function() {
-                                window.location = '{{ url('/size') }}';
+                                title: 'Oops',
+                                text: 'terjadi kesalahan, silahkan kontak cs',
+                                type: 'error'
                             });
                         }
                     });

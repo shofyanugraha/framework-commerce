@@ -42,11 +42,11 @@
 				</div>
 			@endforelse
 		</div>
-		<div class="row">
-			<div class="col-md-2 col-md-offset-5">
-				<a href="{{ url('/new-arrival') }}" class="btn btn-block btn-danger">Lainnya</a>
-			</div>
-		</div>
+		{{--<div class="row">--}}
+			{{--<div class="col-md-2 col-md-offset-5">--}}
+				{{--<a href="{{ url('/new-arrival') }}" class="btn btn-block btn-danger">Lainnya</a>--}}
+			{{--</div>--}}
+		{{--</div>--}}
 	</div>
 </div>
 

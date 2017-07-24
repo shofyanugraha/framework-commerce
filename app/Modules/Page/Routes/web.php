@@ -14,6 +14,7 @@
 Route::get('/', 'PageController@index');
 Route::get('/cart', 'PageController@cart');
 Route::get('/track-order', 'PageController@trackorder');
+Route::get('/about-us', 'PageController@about');
 Route::get('/track-order/{code}', 'PageController@trackorderGet');
 Route::post('/track-order/{code}', 'PageController@postTrackorder');
 Route::get('/checkout/{code}', 'PageController@checkout');

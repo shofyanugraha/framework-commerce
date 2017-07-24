@@ -71,10 +71,10 @@
 							</div>
 							<div class="col-xs-6">
 								<ul>
-									<li><a href="#">Tentang Kami</a></li>
+									<li><a href="{{ url('/about-us') }}">Tentang Kami</a></li>
 									<li><a href="#">Kontak</a></li>
-									<li><a href="#">Lacak Pesanan</a></li>
-									<li><a href="#">Konfirmasi Pembayaran</a></li>
+									<li><a href="{{ url('track-order') }}">Lacak Pesanan</a></li>
+									<li><a href="{{ url('/confirmation') }}">Konfirmasi Pembayaran</a></li>
 								</ul>
 							</div>
 						</div>
