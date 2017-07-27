@@ -8,7 +8,7 @@
                 <p>
                     Terima kasih, anda telah melakukan pemesanan
                 </p>
-                <p>Kode pesanan anda adalah <span class="txtRed">{{ $order->code }}</span></p>
+                <p>Invoice anda adalah <span class="txtRed">{{ $order->code }}</span></p>
                 <table class="table">
                     <tr>
                         <td>Jumlah Pesanan</td>

@@ -8,7 +8,7 @@
                 <input type="text" class="hiddenRecaptcha required" style="visibility: hidden" name="hiddenRecaptcha" id="hiddenRecaptcha">
                 <div class="col-md-4">
                     <div class="form-group ">
-                        <label for="order-number" class="sr-only">Nomor Order / Invoice</label>
+                        <label for="order-number" class="sr-only">Invoice</label>
                         <input type="text" class="form-control" required="required" name="code" id="order-number" placeholder="Kode Pesanan" value="{{ isset($code) ? $code : '' }}">
                     </div>
                     <div style="margin-bottom: 1em">
