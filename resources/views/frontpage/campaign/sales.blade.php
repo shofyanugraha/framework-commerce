@@ -242,65 +242,6 @@
 
                     $('.cart-menu a').trigger('click');
                 }
-            });$('#product-form').submit(function(e) {
-                e.preventDefault();
-                if (typeof facebook != 'undefined') {
-                    facebook.createEvent(window.pixelData.id,'AddToCart', { 'campaign_url' : window.pixelData.slug, 'content_name': window.pixelData.name });
-                }
-
-                $('.validation.size_id').html('');
-                $('.validation.color').html('');
-                var validation = true;
-                if($('input[name=size_id]:checked').length<=0)
-                {
-                    $('.validation.size_id').html("Ukuran Belum Dipilih");
-                    validation = false;
-                }
-                if($('input[name=product_id]:checked').length<=0)
-                {
-                    $('.validation.color').html("Warna Belum Dipilih");
-                    validation = false;
-                }
-
-                if(validation) {
-                    var data = $(this).serializeObject();
-                    data.key = data.product_id + '-' + data.size_id;
-                    var localCart = window._storage.get("item-{{ base64_encode($data->id)  }}");
-
-                    if(localCart === undefined || localCart === null) {
-                        cart = [];
-                        cart.push(data);
-                    } else {
-                        cart = localCart;
-                        window.tempItem = [];
-                        window.updateItem = [];
-
-                        $.each(cart, function(keyCart, valCart) {
-                            console.log(valCart.key !== data.key);
-                            if (valCart.key !== data.key){
-                                window.tempItem.push(valCart);
-                            } else {
-                                window.updateItem.push(valCart);
-                            }
-                        });
-
-
-                        if(window.updateItem.length > 0) {
-                            window.updateItem[0].qty = (parseInt(data.qty) + parseInt(window.updateItem[0].qty));
-                            window.tempItem.push(window.updateItem[0]);
-                            cart = window.tempItem;
-                        } else {
-                            cart.push(data);
-                        }
-
-                    }
-
-                    window._storage.set("item-{{ base64_encode($data->id)  }}", cart);
-
-                    loadCart();
-
-                    $('.cart-menu a').trigger('click');
-                }
             });
 
 
