@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>@yield('title', config('app.name'))</title>
-
+	@yield('meta)
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:400,700,800" rel="stylesheet">
 	<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>

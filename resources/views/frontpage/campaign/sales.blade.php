@@ -2,6 +2,15 @@
 @section('stylesheet')
 @endsection
 
+@section('meta')
+    <meta property="og:title" content="{{ $data->name }}"/>
+    <meta property="og:url" content="{{ url($data->slug) }}"/>
+    <meta property="og:site_name" content="Calcio Outfit"/>
+    <meta property="og:type" content="product"/>
+    <meta property="og:image" content="{{ $data->details[0]->front_image->item->thumb }}">
+    <meta property="og:description" content="Limited Edition - {{ $data->name }}. {{ url($data->slug) }}">
+@endsection
+
 @section('content')
 <div class="section">
     <div class="container">
