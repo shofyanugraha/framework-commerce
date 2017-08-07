@@ -31,7 +31,7 @@ class PageController extends Controller
     public function sales($username, $slug){
         $param = [];
         $param['offset'] = 4;
-        $param['attribute'] = 'description';
+        $param['attribute'] = 'description,status';
         $res = Curl::to(env('API_URL').'product/'.$username.'/'.$slug)
             ->withData($param)
             ->asJson()

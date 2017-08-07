@@ -46,6 +46,7 @@
                     </div>
                 </div>
                 <div class="col-md-5">
+                    @if($data->status->number != 0)
                     <form  method="post" id="product-form">
                         <input type="hidden" name="product_name" value="{{ $data->name }}">
                         <input type="hidden" name="price" value="{{ $data->details[0]->sale_price }}">
@@ -86,26 +87,33 @@
                             <i class="fa fa-shopping-cart"></i> Beli Sekarang
                         </button>
                     </form>
-                        <div class="countdown-holder">
-                            <h4 class="text-center">Penawaran Berakhir Dalam</h4>
-                            <ul class="countdown">
-                                <li> <span class="days">00</span>
-                                    <p class="days_ref">Hari</p>
-                                </li>
-                                <li class="seperator"></li>
-                                <li> <span class="hours">00</span>
-                                    <p class="hours_ref">Jam</p>
-                                </li>
-                                <li class="seperator"></li>
-                                <li> <span class="minutes">00</span>
-                                    <p class="minutes_ref">Menit</p>
-                                </li>
-                                <li class="seperator"></li>
-                                <li> <span class="seconds">00</span>
-                                    <p class="seconds_ref">Detik</p>
-                                </li>
-                            </ul>
-                        </div>
+                    @else
+                    <h2 class="title">{{ $data->name }}</h2>
+                    @endif
+                    <div class="countdown-holder">
+                        @if($data->status->number != 0)
+                        <h4 class="text-center">Penawaran Berakhir Dalam</h4>
+                        <ul class="countdown">
+                            <li> <span class="days">00</span>
+                                <p class="days_ref">Hari</p>
+                            </li>
+                            <li class="seperator"></li>
+                            <li> <span class="hours">00</span>
+                                <p class="hours_ref">Jam</p>
+                            </li>
+                            <li class="seperator"></li>
+                            <li> <span class="minutes">00</span>
+                                <p class="minutes_ref">Menit</p>
+                            </li>
+                            <li class="seperator"></li>
+                            <li> <span class="seconds">00</span>
+                                <p class="seconds_ref">Detik</p>
+                            </li>
+                        </ul>
+                        @else
+                            <h4 class="text-center">Penawaran Telah Berakhir</h4>
+                        @endif
+                    </div>
 
 
                 </div>
@@ -118,7 +126,7 @@
         <div class="row">
             <div class="col-md-7 text-left">
                     <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" role="tablist">
+                    <ul class="nav nav-tabs" role="tablist" style="float: left">
                         <li class="bg-desc active" role="presentation" class="active">
                             <a href="#home" aria-controls="home" role="tab" data-toggle="tab">
                                 <i class="fa fa-align-center"></i>
