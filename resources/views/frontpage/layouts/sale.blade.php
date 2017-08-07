@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     @yield('meta', '')
-    
+
     <title>@yield('title', config('app.name'))</title>
 
     <!-- Fonts -->
@@ -46,7 +46,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse main-nav" id="navbar-collapse-1">
                 <!-- regular link -->
-                @include('frontpage/layouts/menu-sale')
+                @include('frontpage/layouts/menu')
             </div>
         </div>
     </nav>
