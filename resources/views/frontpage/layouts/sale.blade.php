@@ -43,7 +43,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse main-nav" id="navbar-collapse-1">
                 <!-- regular link -->
-                @include('frontpage/layouts/menu')
+                @include('frontpage/layouts/menu-sale')
             </div>
         </div>
     </nav>
