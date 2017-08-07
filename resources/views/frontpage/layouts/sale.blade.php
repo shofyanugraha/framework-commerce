@@ -22,14 +22,7 @@
 <header>
     <div class="top-nav">
         <div class="container">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="active">
-                    <a href="{{ url('/track-order') }}">Lacak Pesanan</a>
-                </li>
-                <li>
-                    <a href="{{ url('/confirmation') }}">Konfirmasi Pembayaran</a>
-                </li>
-            </ul>
+            
         </div>
     </div>
 
