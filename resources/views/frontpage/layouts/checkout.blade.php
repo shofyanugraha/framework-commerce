@@ -25,7 +25,7 @@
                     <a href="{{ url('/track-order') }}">Lacak Pesanan</a>
                 </li>
                 <li>
-                    <a href="{{ url('/confirmation-order') }}">Konfirmasi Pembayaran</a>
+                    <a href="{{ url('/confirmation') }}">Konfirmasi Pembayaran</a>
                 </li>
             </ul>
         </div>

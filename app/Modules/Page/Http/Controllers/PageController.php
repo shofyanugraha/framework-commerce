@@ -14,7 +14,7 @@ class PageController extends Controller
     public function index(){
         $param = [];
         $param['offset'] = 12;
-        $res = Curl::to(env('API_URL').'product')
+        $res = Curl::to(env('API_URL').'product/home')
             ->withData($param)
             ->asJson()
             ->get();
