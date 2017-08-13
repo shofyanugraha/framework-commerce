@@ -6,10 +6,10 @@
                 <div class="col-md-4 col-md-offset-4">
                     <div class="panel">
                         <div class="panel-body">
-                            <h3 class="sc-title text-center">Invoice</h3>
+                            <h3 class="sc-title text-center">Konfirmasi Pembayaran</h3>
                             <form action="#" mehthod="post" id="form-confirmation">
                                 <div class="form-group">
-                                    <label class="control-label">Kode Pesanan <span class="required">*</span></label>
+                                    <label class="control-label">Invoice <span class="required">*</span></label>
                                     <input type="text" name="code" required class="form-control" placeholder="Kode Pesanan Anda">
                                 </div>
                                 <div class="form-group">
