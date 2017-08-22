@@ -72,14 +72,12 @@
                                 <div class="size-holder">
                                     <label>Pilih Ukuran</label><br/>
                                     <input type="hidden" name="size">
-                                    @foreach($data->details as $detail)
-                                        @foreach($detail->size as $size)
+                                        @foreach($data->details[0]->size as $size)
                                             <span>
                                                 <input type="radio" name="size_id" class="size-select" id="item-size-{{$size->id}}" value="{{ $size->id}}">
                                                 <label data-additional="{{$size->additional_cost}}" class="select-size" for="item-size-{{$size->id}}">{{ $size->name }}</label>
                                             </span>
                                         @endforeach
-                                    @endforeach
                                     <p class="validation error size_id"></p>
                                 </div>
                         </div>
@@ -134,7 +132,16 @@
                             </a>
                         </li>
                         <li class="bg-wa">
-                            <a href="https://api.whatsapp.com/send?phone={{ $data->whatsapp }}&text=Saya tertarik dengan Produk {{ $data->name }}" target="_blank">
+                            @php
+                                if($res = preg_match('/^(08)[0-9]{9,11}$/',$data->whatsapp)){
+                                    $res = '62'.substr($data->whatsapp, 1);
+                                }elseif($res = preg_match('/^(\+?62)[0-9]{9,11}$/',$data->whatsapp)){
+                                    $res = substr($data->whatsapp, 1);
+                                } else {
+                                    $res = $data->whatsapp;
+                                }
+                            @endphp
+                            <a href="https://api.whatsapp.com/send?phone={{ $res }}&text=Saya tertarik dengan Produk {{ $data->name }}" target="_blank">
                                 <i class="fa fa-whatsapp"></i>
                                 <span>Chat Sekarang</span>
                             </a>
