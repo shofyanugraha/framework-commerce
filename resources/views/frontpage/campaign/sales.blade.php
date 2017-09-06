@@ -133,7 +133,7 @@
                         </li>
                         <li class="bg-wa">
                             @php
-                                if($res = preg_match('/^(08)[0-9]{9,11}$/',$data->whatsapp)){
+                                if($res = preg_match('/^(0)[0-9]{9,11}$/',$data->whatsapp)){
                                     $res = '62'.substr($data->whatsapp, 1);
                                 }elseif($res = preg_match('/^(\+?62)[0-9]{9,11}$/',$data->whatsapp)){
                                     $res = substr($data->whatsapp, 1);

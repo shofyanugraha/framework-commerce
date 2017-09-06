@@ -43,7 +43,14 @@
                                 <td>:</td>
                                 <td>{{ $order->receiver_phone }}</td>
                             </tr>
+                            @if($order->status->number == 500)
+                            <tr>
+                                <td>No Resi</td>
+                                <td>:</td>
+                                <td>{{ $order->real_courier }} - {{ $order->awb }}</td>
+                            </tr>
                             </tbody>
+                            @endif
                         </table>
 
                     </div>
@@ -116,6 +123,9 @@
                             <div class="timeline-event">
                                 <div class="timeline-heading">
                                     <h5>{{ $history->status->string }}</h5>
+                                    @if($history->status->number == 500)
+                                        {{ $order->real_courier }} - {{ $order->awb }}
+                                    @endif
                                 </div>
                                 <div class="timeline-footer">
                                     <p class="text-muted">{{ date('d-m-Y h:i:s', strtotime($history->created_at)) }}</p>
