@@ -25,12 +25,15 @@
                     <div class="row">
                         <div class="col-xs-2">
                             <div class="image-preview-buttons">
+                                
                                 <a class="active front" data-image="{{ json_encode($data->details[0]->front_image->item) }}" href="#">
                                     <img src="{{ $data->details[0]->front_image->item->thumb }}" alt="" class="img-responsive"/>
                                 </a>
+                                @if(isset($data->details[0]->back_image->item))
                                 <a class="back" data-image="{{ json_encode($data->details[0]->back_image->item) }}" href="#">
                                     <img src="{{ $data->details[0]->back_image->item->thumb }}" alt="" class="img-responsive"/>
                                 </a>
+                                @endif
                             </div>
                         </div>
                         <div class="col-xs-10">
@@ -64,7 +67,7 @@
                                     <span>
                                         <input type="radio" name="product_id" class="color-select" id="item-color-{{$detail->id}}" value="{{ $detail->id }}">
 
-                                        <label class="select-color" data-price="{{ $detail->sale_price }}" data-back="{{ json_encode($detail->back_image->item) }}" data-front="{{ json_encode($detail->front_image->item) }}"  for="item-color-{{$detail->id}}" style="background:{{$detail->color->hex}}"></label>
+                                        <label class="select-color" data-price="{{ $detail->sale_price }}" data-back="{{ isset($detail->back_image->item) ? json_encode($detail->back_image->item) : '' }}" data-front="{{ json_encode($detail->front_image->item) }}"  for="item-color-{{$detail->id}}" style="background:{{$detail->color->hex}}"></label>
                                     </span>
                                     @endforeach
                                     <p class="validation error color"></p>
