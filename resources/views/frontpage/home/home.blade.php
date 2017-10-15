@@ -25,6 +25,7 @@
 	<div class="container">
 		<h1 class="sc-title text-center">New Arrival</h1>
 		<div class="row product-holder">
+			@if($latest)
 			@forelse($latest as $product)
 				<div class="col-md-3 col-xs-6">
 					<div class="product text-center">
@@ -41,6 +42,7 @@
 					No Product
 				</div>
 			@endforelse
+			@endif
 		</div>
 		{{--<div class="row">--}}
 			{{--<div class="col-md-2 col-md-offset-5">--}}

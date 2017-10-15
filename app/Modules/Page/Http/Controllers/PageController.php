@@ -25,6 +25,47 @@ class PageController extends Controller
         return view('frontpage.home.home', compact('latest'));
     }
 
+    public function category($parent, $child = null){
+        $param = [];
+        $param['offset'] = 12;
+        if($child){
+            $res = Curl::to(env('API_URL').'product/category/'.$parent.'/'.$child)
+            ->withData($param)
+            ->asJson()
+            ->get();
+        } else {
+            $res = Curl::to(env('API_URL').'product/category/'.$parent)
+            ->withData($param)
+            ->asJson()
+            ->get();
+        }
+        $latest = null;
+        $category = null;
+        if (isset($res) && $res->meta->status == TRUE) {
+            $latest = $res->data;
+            $category = $res->category;
+        }
+
+        $param = [];
+        $param['offset'] = 100;
+        $param['type'] = 'tree';
+        
+        $param['category_id'] = $category->parent_id;
+        $curl = \Curl::to(env('API_URL', 'http://api-calcio.dev/v1').'category')
+            ->withData($param)
+
+            ->asJson()
+            ->get();
+
+        $cat = null;
+        if($curl != null) {
+            $cat =  $curl->data;
+        }
+
+
+        return view('frontpage.home.category', compact('latest','category', 'cat'));
+    }
+
     public function about(){
         return view('frontpage.page.about');
     }

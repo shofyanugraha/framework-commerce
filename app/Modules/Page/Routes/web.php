@@ -18,6 +18,7 @@ Route::get('/about-us', 'PageController@about');
 Route::get('/track-order/{code}', 'PageController@trackorderGet');
 Route::post('/track-order/{code}', 'PageController@postTrackorder');
 Route::get('/checkout/{code}', 'PageController@checkout');
+Route::get('/category/{parent}/{child}', 'PageController@category');
 Route::get('/order-success/{code}', 'PageController@orderSuccess');
 Route::get('/confirmation', 'PageController@confirmation');
 Route::get('/{username}/{slug}', 'PageController@sales')->where('username', '^[a-zA-Z_-][a-zA-Z0-9_-]{1,20}+$')->where('slug', '^[a-zA-Z][a-zA-Z0-9_-]{1,50}$');

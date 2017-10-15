@@ -71,8 +71,8 @@
                                 @foreach($details as $detail)
                                 <tr>
                                     <td>
-                                        <img src="{{ $detail->front_image->item->thumb }}" width="50">
-                                        <img src="{{ $detail->back_image->item->thumb }}" width="50">
+                                        <img src="{{ isset($detail->front_image->item->thumb) ? $detail->front_image->item->thumb : '' }}" width="50">
+                                        <img src="{{ isset($detail->back_image->item->thumb) ? $detail->back_image->item->thumb : '' }}" width="50">
                                         <span><a href="{{ url( $detail->product->slug ) }} target="_blank" title="{{ $detail->product->name }}">{{ $detail->product->name }}</a>
                                     </td>
                                     <td>{{ $detail->size[0]->name }}</td>

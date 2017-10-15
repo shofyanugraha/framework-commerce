@@ -4,11 +4,6 @@
 */
 
 /* --- Set Collapsed navbar - in % of window height (for small devices ) --- */
-.show-grid [class^=col-] {padding-top: 10px;padding-bottom: 10px;background-color: transparent;text-align:center;}
-.show-grid { clear: both;}
-.show-grid:not(:first-child) { border-top: 1px solid #4c6d7c;}
-.show-grid [class^=col-]:not(:last-child) { border-right: 1px solid #4c6d7c;}
-
 @media (max-width: 767px) {
     .navbar.xs-height25.navbar-fixed-top .navbar-collapse, .navbar.xs-height25.navbar-fixed-bottom .navbar-collapse {max-height: 25vh}
     .navbar.xs-height33.navbar-fixed-top .navbar-collapse, .navbar.xs-height33.navbar-fixed-bottom .navbar-collapse {max-height: 33vh}
@@ -17,9 +12,7 @@
     .navbar.xs-height75.navbar-fixed-top .navbar-collapse, .navbar.xs-height75.navbar-fixed-bottom .navbar-collapse {max-height: 75vh}
     .navbar.xs-height100.navbar-fixed-top .navbar-collapse, .navbar.xs-height100.navbar-fixed-bottom .navbar-collapse {max-height: 100vh}
 }
-.navbar {
-    margin-bottom: 0;
-}
+
 /* Carousel-indicators */
 .navbar-carousel-indicators{position:relative;bottom:inherit;left:0;right:0;z-index:0;width:100%;padding-left:0;padding-right:0;margin-left:0;margin-right:0;text-align:inherit ;list-style:none}
 .navbar-carousel-indicators li{width:100%;height:auto;margin:0px;text-indent:inherit;cursor:pointer;border:0;border-radius:0px; display: block;}
