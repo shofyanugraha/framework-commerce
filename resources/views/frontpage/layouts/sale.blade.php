@@ -29,33 +29,121 @@
 </head>
 <body>
 <header>
-    <div class="top-nav">
-        <div class="container">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="active">
-                    <a href="#">&nbsp;</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    
 
-    <nav class="navbar no-border-radius main-menu" id="main_navbar" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('img/logo.png') }}"></a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse main-nav" id="navbar-collapse-1">
-                <!-- regular link -->
-                @include('frontpage/layouts/menu-sale')
-            </div>
+            <div class="top-nav hidden-sm hidden-xs">
+                <div class="container">
+                        <ul class="nav navbar-nav navbar-right">
+                                <li><a href="">&nbsp;</a></li>
+                                <li class="active hidden-sm hidden-xs">
+                                        <a href="{{ url('/track-order') }}">Lacak Pesanan</a>
+                                </li>
+                                <li class="hidden-sm hidden-xs">
+                                        <a href="{{ url('/confirmation') }}">Konfirmasi Pembayaran</a>
+                                </li>
+                        </ul>
+                </div>
         </div>
-    </nav>
+                  <!-- begin MegaNavbar-->
+          <nav class="navbar navbar-blue no-border-radius no-shadow xs-height75 navbar-static-top " id="main_navbar" role="navigation">
+                <div class="container">
+                        <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-brand_size_lg">
+                                <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand navbar-left" href="{{ url('/') }}">
+                                    <img src="{{ asset('img/logo.png') }}" class="img-large hidden-sm hidden-xs">
+                                    <img src="{{ asset('img/logo.png') }}" class="img-mobile hidden-md hidden-lg">
+                                </a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbar-brand_size_lg">
+                                
+                                <ul class="nav navbar-nav navbar-right">
+                                        <li><a href="{{ url('/') }}">Home</a></li>
+                                        <li class="dropdown-grid">
+                                                <a data-toggle="dropdown" href="javascript:;" class="dropdown-toggle">Jaket <span class="caret"></span></a>
+                                                <div class="dropdown-grid-wrapper">
+                                                        <div class="dropdown-menu col-xs-12 col-sm-4 col-md-4 col-lg-4  no-shadow no-border-radius ">
+                                                                    <div class="row">
+                                                                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                                                                <ul class="nav">
+                                                                                        <li><a href="{{ url('/category/jacket/storm') }}">Storm</a></li>
+                                                                                        <li><a href="{{ url('/category/jacket/light') }}">Light</a></li>
+                                                                                        <li><a href="{{ url('/category/jacket/glove-hoodie') }}">Glove Hoodie</a></li>
+                                                                                        <li><a href="{{ url('/category/jacket/magnum') }}">Magnum</a></li>
+                                                                                        <li><a href="{{ url('/category/jacket/vavor') }}">Vavor</a></li>
+                                                                                        <li><a href="{{ url('/category/jacket/bomber') }}">Bomber</a></li>
+                                                                                        <li><a href="{{ url('/category/jacket/windrunner') }}">Windrunner</a></li>
+                                                                                </ul>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                                                                <ul class="nav">
+                                                                                        <li><a href="{{ url('/category/jacket/k-way') }}">K-Way</a></li>
+                                                                                        <li><a href="{{ url('/category/jacket/eroi') }}">Eroi</a></li>
+                                                                                        <li><a href="{{ url('/category/jacket/windbreaker') }}">Windbreaker</a></li>
+                                                                                        <li><a href="{{ url('/category/jacket/camo') }}">Camo</a></li>
+                                                                                        <li><a href="{{ url('/category/jacket/halfzipper') }}">Halfzipper</a></li>
+                                                                                        <li><a href="{{ url('/category/jacket/windrunner') }}">Other</a></li>
+                                                                                </ul>
+                                                                        </div>
+                                                                    </div>
+                                                        </div>
+                                                </div>
+                                        </li>
+                                        <li class="dropdown">
+                                                <a data-toggle="dropdown" href="javascript:;" class="dropdown-toggle">Shirt <span class="caret"></span></a>
+                                                <ul class="dropdown-menu no-shadow no-border-radius">
+                                                    <li><a href="{{ url('/category/jacket/storm') }}">T-Shirt</a></li>
+                                                    <li><a href="{{ url('/category/jacket/light') }}">Polo Shirt</a></li>
+                                                </ul>
+                                        </li>
+                                        <li class="dropdown-grid">
+                                                <a data-toggle="dropdown" href="javascript:;" class="dropdown-toggle">Club <span class="caret"></span></a>
+                                                <div class="dropdown-grid-wrapper">
+                                                        <div class="dropdown-menu col-xs-12 col-sm-7 col-md-7 col-lg-7  no-shadow no-border-radius ">
+                                                                <div class="row">
+                                                                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                                                                <ul class="nav">
+                                                                                        <li class="dropdown-header">Premier League</li>
+                                                                                        <li><a href="{{ url('/category/club/arsenal') }}">Arsenal</a></li>
+                                                                                        <li><a href="{{ url('/category/club/chelsea') }}">Chelsea</a></li>
+                                                                                        <li><a href="{{ url('/category/club/liverpool') }}">Liverpool</a></li>
+                                                                                        <li><a href="{{ url('/category/club/manutd') }}">Man United</a></li>
+                                                                                        <li><a href="{{ url('/category/club/manutd') }}">Manchester City</a></li>
+                                                                                </ul>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                                                                <ul class="nav">
+                                                                                        <li class="dropdown-header">Serie A</li>
+                                                                                        <li><a href="{{ url('/category/club/ac-milan') }}">AC Milan</a></li>
+                                                                                        <li><a href="{{ url('/category/club/inter-milan') }}">Internazionale</a></li>
+                                                                                        <li><a href="{{ url('/category/club/juventus') }}">Juventus</a></li>
+                                                                                        <li><a href="{{ url('/category/club/as-roma') }}">AS Roma</a></li>
+                                                                                </ul>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                                                                <ul class="nav">
+                                                                                        <li class="dropdown-header">La Liga</li>
+                                                                                        <li><a href="{{ url('/category/club/barcelona') }}">Barcelona</a></li>
+                                                                                        <li><a href="{{ url('/category/club/real-madrid') }}">Real Madrid</a></li>
+                                                                                </ul>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </li>
+                                        <ul class="nav navbar-nav navbar-right nav-user">
+                                        <li class="hidden-md hidden-lg"><a href="{{ url('/track-order') }}">Lacak Pesanan</a></li>
+                                        <li class="hidden-md hidden-lg"><a href="{{ url('/confirmation') }}">Konfirmasi Pembayaran</a></li>
+                                        <li class="cart-menu">
+                                            <a href="#" data-toggle="modal" data-target="#modalCart"><i class="fa fa-shopping-bag"></i><span id="item-counter">0</span></a>
+                                        </li>
+                                </ul>
+                            </ul>
+                        </div>
+                </div>
+        </nav>
+
 </header>
 
 <main id="spark-app">

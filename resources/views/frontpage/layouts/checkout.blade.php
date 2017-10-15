@@ -27,46 +27,50 @@
 </head>
 <body>
 <header>
-    <div class="top-nav">
-        <div class="container">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="active">
-                    <a href="{{ url('/track-order') }}">Lacak Pesanan</a>
-                </li>
-                <li>
-                    <a href="{{ url('/confirmation') }}">Konfirmasi Pembayaran</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    
 
-    <nav class="navbar no-border-radius main-menu" id="main_navbar" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#"><img src="{{ asset('img/logo.png') }}"></a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse main-nav" id="navbar-collapse-1">
-                <!-- regular link -->
-                <ul class="nav navbar-nav navbar-right main-nav">
-                    <!-- divider -->
-                    <li class="active">
-                        <a href="#"><span class="badge red">1</span> Checkout</a>
-                    </li>
-                    <li class="separator"></li>
-                    <li>
-                        <a href="#"><span class="badge">2</span> Order Berhasil</a>
-                    </li>
-                    <li class="divider"></li>
-                </ul>
-            </div>
+            <div class="top-nav hidden-sm hidden-xs">
+                <div class="container">
+                        <ul class="nav navbar-nav navbar-right">
+                                <li><a href="">&nbsp;</a></li>
+                                <li class="active hidden-sm hidden-xs">
+                                        <a href="{{ url('/track-order') }}">Lacak Pesanan</a>
+                                </li>
+                                <li class="hidden-sm hidden-xs">
+                                        <a href="{{ url('/confirmation') }}">Konfirmasi Pembayaran</a>
+                                </li>
+                        </ul>
+                </div>
         </div>
-    </nav>
+                  <!-- begin MegaNavbar-->
+          <nav class="navbar navbar-blue no-border-radius no-shadow xs-height75 navbar-static-top " id="main_navbar" role="navigation">
+                <div class="container">
+                        <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-brand_size_lg">
+                                <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand navbar-left" href="{{ url('/') }}">
+                                    <img src="{{ asset('img/logo.png') }}" class="img-large hidden-sm hidden-xs">
+                                    <img src="{{ asset('img/logo.png') }}" class="img-mobile hidden-md hidden-lg">
+                                </a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbar-brand_size_lg">
+                                
+                                <ul class="nav navbar-nav navbar-right">
+                                                             <!-- divider -->
+                                        <li class="active">
+                                            <a href="#"><span class="badge red">1</span> Checkout</a>
+                                        </li>
+                                        <li class="separator"></li>
+                                        <li>
+                                            <a href="#"><span class="badge">2</span> Order Berhasil</a>
+                                        </li>
+                                </ul>
+                            </ul>
+                        </div>
+                </div>
+        </nav>
+
 </header>
 
 <main id="spark-app">

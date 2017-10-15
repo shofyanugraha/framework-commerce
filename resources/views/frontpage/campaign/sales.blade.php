@@ -15,11 +15,6 @@
 <div class="section">
     <div class="container">
         <div id="sale">
-                <ul class="breadcrumb">
-                    <li><a href="{{ url('/') }}">Home</a></li>
-                    <li><a href="{{ url('/category/'.$data->category->slug) }}">{{ $data->category->name }}</a></li>
-                    <li>{{ $data->name }}</li>
-                </ul>
             <div class="row">
                 <div class="col-md-7">
                     <div class="row">
