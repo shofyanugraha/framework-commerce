@@ -21,10 +21,12 @@
 				<h3 class="sc-title">{{ $category->name}}</h3>
 				<div class="row product-holder">
 					@if($latest)
-					@forelse($latest as $product)
+					@forelse($latest->data as $product)
 						<div class="col-md-3 col-xs-6">
 							<div class="product text-center">
+
 								<div class="product-image">
+
 									<a href="{{ $product->slug }}"><img src="{{ isset($product->details[0]->front_image) ? $product->details[0]->front_image->item->thumb : '' }}" class="img-responsive"></a>
 								</div>
 								<div class="product-title h4"><a href="{{ $product->slug }}">{{ $product->name}}</a></div>
