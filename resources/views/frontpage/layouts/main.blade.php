@@ -27,21 +27,21 @@
 </head>
 <body>
         <header>
-                <div class="top-nav hidden-sm hidden-xs">
-                        <div class="container">
-                                <ul class="nav navbar-nav navbar-right">
-                                        <li><a href="">&nbsp;</a></li>
-                                        <li class="active hidden-sm hidden-xs">
-                                                <a href="{{ url('/track-order') }}">Lacak Pesanan</a>
-                                        </li>
-                                        <li class="hidden-sm hidden-xs">
-                                                <a href="{{ url('/confirmation') }}">Konfirmasi Pembayaran</a>
-                                        </li>
-                                </ul>
-                        </div>
+        <div class="top-nav hidden-sm hidden-xs">
+                <div class="container">
+                        <ul class="nav navbar-nav navbar-right">
+                                <li><a href="">&nbsp;</a></li>
+                                <li class="active hidden-sm hidden-xs">
+                                        <a href="{{ url('/track-order') }}">Lacak Pesanan</a>
+                                </li>
+                                <li class="hidden-sm hidden-xs">
+                                        <a href="{{ url('/confirmation') }}">Konfirmasi Pembayaran</a>
+                                </li>
+                        </ul>
                 </div>
+        </div>
                   <!-- begin MegaNavbar-->
-                  <nav class="navbar navbar-blue no-border-radius no-shadow xs-height75 navbar-static-top " id="main_navbar" role="navigation">
+          <nav class="navbar navbar-blue no-border-radius no-shadow xs-height75 navbar-static-top " id="main_navbar" role="navigation">
                 <div class="container">
                         <div class="navbar-header">
                                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-brand_size_lg">
@@ -89,16 +89,16 @@
                                         <li class="dropdown">
                                                 <a data-toggle="dropdown" href="javascript:;" class="dropdown-toggle">Shirt <span class="caret"></span></a>
                                                 <ul class="dropdown-menu no-shadow no-border-radius">
-                                                	<li><a href="{{ url('/category/jacket/storm') }}">T-Shirt</a></li>
-                                                    <li><a href="{{ url('/category/jacket/light') }}">Polo Shirt</a></li>
+                                                	<li><a href="{{ url('/category/shirt/t-shirt') }}">T-Shirt</a></li>
+                                                    <li><a href="{{ url('/category/shirt/polo-shirt') }}">Polo Shirt</a></li>
                                                 </ul>
                                         </li>
                                         <li class="dropdown-grid">
                                                 <a data-toggle="dropdown" href="javascript:;" class="dropdown-toggle">Club <span class="caret"></span></a>
                                                 <div class="dropdown-grid-wrapper">
-                                                        <div class="dropdown-menu col-xs-12 col-sm-7 col-md-7 col-lg-7  no-shadow no-border-radius ">
+                                                        <div class="dropdown-menu col-xs-12 col-sm-8 col-md-8 col-lg-8  no-shadow no-border-radius ">
                                                                 <div class="row">
-                                                                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                                                                                 <ul class="nav">
                                                                                         <li class="dropdown-header">Premier League</li>
                                                                                         <li><a href="{{ url('/category/club/arsenal') }}">Arsenal</a></li>
@@ -108,7 +108,7 @@
                                                                                         <li><a href="{{ url('/category/club/manutd') }}">Manchester City</a></li>
                                                                                 </ul>
                                                                         </div>
-                                                                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                                                                                 <ul class="nav">
                                                                                         <li class="dropdown-header">Serie A</li>
                                                                                         <li><a href="{{ url('/category/club/ac-milan') }}">AC Milan</a></li>
@@ -117,13 +117,20 @@
                                                                                         <li><a href="{{ url('/category/club/as-roma') }}">AS Roma</a></li>
                                                                                 </ul>
                                                                         </div>
-                                                                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                                                                                 <ul class="nav">
                                                                                         <li class="dropdown-header">La Liga</li>
                                                                                         <li><a href="{{ url('/category/club/barcelona') }}">Barcelona</a></li>
                                                                                         <li><a href="{{ url('/category/club/real-madrid') }}">Real Madrid</a></li>
                                                                                 </ul>
                                                                         </div>
+                                                                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                                                                                <ul class="nav">
+                                                                                        <li><a href="{{ url('/category/club/persib') }}">Persib</a></li>
+                                                                                        <li><a href="{{ url('/category/club/other') }}">Other</a></li>
+                                                                                </ul>
+                                                                        </div>
+
                                                                 </div>
                                                         </div>
                                                 </div>
