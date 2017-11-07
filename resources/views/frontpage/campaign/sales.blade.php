@@ -79,7 +79,7 @@
                                     <p class="validation error size_id"></p>
                                 </div>
                         </div>
-                        <button type="submit" class="btn btn-block btn-danger buy-button">
+                        <button type="submit" class="btn btn-block btn-danger buy-button hidden-sm hidden-xs" id="btn-atc">
                             <i class="fa fa-shopping-cart"></i> Beli Sekarang
                         </button>
                     </form>
@@ -117,6 +117,22 @@
         </div>
     </div>
 </div>
+<div class="fixed hidden-md hidden-lg" style="    position: fixed;
+    bottom: 0;
+    width: 100%;">
+    <div class="col-xs-6" style="padding:0">
+        <a class="btn btn-block btn-danger">
+            <i class="fa fa-shopping-cart"></i>
+            Beli Sekarang
+        </a>
+    </div>
+    <div class="col-xs-6"  style="padding:0">
+        <a class="btn btn-block btn-success">
+            <i class="fa fa-whatsapp"></i>
+            Chat Sekarang
+        </a>
+    </div>
+</div>
 <div class="separator">
     <div class="container">
         <div class="row">
@@ -129,7 +145,7 @@
                                 <span>Deskripsi</span>
                             </a>
                         </li>
-                        <li class="bg-wa">
+                        <li class="bg-wa hidden-sm hidden-xs">
                             @php
                                 if($res = preg_match('/^(0)[0-9]{9,11}$/',$data->whatsapp)){
                                     $res = '62'.substr($data->whatsapp, 1);

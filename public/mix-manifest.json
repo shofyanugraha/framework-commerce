@@ -1,9 +1,5 @@
 {
-  "/js/app.js": "/js/app.cc740b3b272836452a98.js",
   "/mix.js": "/mix.41b74b77a96f3fa81d97.js",
-  "/css/app.css": "/css/app.1bbb4c62915099631aae04fe8d7943fc.css",
-  "/js/customize.js": "/js/customize.0a16373af50600b4aad4d748af423c0f.js",
-  "/mix.js.map": "/mix.363b070797fcb937513b.js.map",
-  "/css/app.css.map": "/css/app.2a717399ab8ef72942e5979eb993ea08.css.map",
-  "/css/custom.css": "/css/custom.f9dd10596410cb313626f4b6bfbb389c.css"
+  "/css/app.css": "/css/app.1ba99cf968f875370019.css",
+  "/js/customize.js": "/js/customize.0a16373af50600b4aad4d748af423c0f.js"
 }

@@ -6,7 +6,7 @@
 <div class="main-content section">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-3 category-widget">
 				@foreach($cat as $ca)
                      <h4>{{ $ca->name}}</h4>
                      <ul class="nav nav-pills nav-stacked">
@@ -31,7 +31,6 @@
 								</div>
 								<div class="product-title h4"><a href="{{ $product->slug }}">{{ $product->name}}</a></div>
 								<div class="product-price">Rp {{ isset($product->details[0]->sale_price) ? number_format($product->details[0]->sale_price, 0, ',', '.') : '' }}</div>
-								<a href="{{ url($product->slug) }}" class="btn  btn-primary">Detail</a>
 							</div>
 						</div>
 					@empty

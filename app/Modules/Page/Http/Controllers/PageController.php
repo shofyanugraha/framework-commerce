@@ -49,7 +49,7 @@ class PageController extends Controller
         $param = [];
         $param['offset'] = 100;
         $param['type'] = 'tree';
-        
+
         $param['category_id'] = $category->parent_id;
         $curl = \Curl::to(env('API_URL', 'http://api-calcio.dev/v1').'category')
             ->withData($param)
@@ -71,7 +71,6 @@ class PageController extends Controller
     }
     public function sales($username, $slug){
         $param = [];
-        $param['offset'] = 4;
         $param['attribute'] = 'description,status';
         $res = Curl::to(env('API_URL').'product/'.$username.'/'.$slug)
             ->withData($param)

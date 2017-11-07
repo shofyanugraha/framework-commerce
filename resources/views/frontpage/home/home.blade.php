@@ -34,7 +34,6 @@
 						</div>
 						<div class="product-title h4"><a href="{{ $product->slug }}">{{ $product->name}}</a></div>
 						<div class="product-price">Rp {{ isset($product->details[0]->sale_price) ? number_format($product->details[0]->sale_price, 0, ',', '.') : '' }}</div>
-						<a href="{{ $product->slug }}" class="btn  btn-primary">Detail</a>
 					</div>
 				</div>
 			@empty

@@ -45,7 +45,8 @@
                 </div>
         </div>
                   <!-- begin MegaNavbar-->
-          <nav class="navbar navbar-blue no-border-radius no-shadow xs-height75 navbar-static-top " id="main_navbar" role="navigation">
+          <nav class="navbar navbar-blue no-border-radius no-shadow xs-height75 navbar-static-top " id="main_navbar" role="navigation" style="    border-bottom: 1px solid #ccc;
+">
                 <div class="container">
                         <div class="navbar-header">
                                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-brand_size_lg">

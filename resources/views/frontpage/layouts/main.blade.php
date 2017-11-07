@@ -41,7 +41,8 @@
                 </div>
         </div>
                   <!-- begin MegaNavbar-->
-          <nav class="navbar navbar-blue no-border-radius no-shadow xs-height75 navbar-static-top " id="main_navbar" role="navigation">
+          <nav class="navbar navbar-blue no-border-radius no-shadow xs-height75 navbar-static-top " id="main_navbar" role="navigation"  style="    border-bottom: 1px solid #ccc;
+">
                 <div class="container">
                         <div class="navbar-header">
                                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-brand_size_lg">
@@ -104,8 +105,8 @@
                                                                                         <li><a href="{{ url('/category/club/arsenal') }}">Arsenal</a></li>
                                                                                         <li><a href="{{ url('/category/club/chelsea') }}">Chelsea</a></li>
                                                                                         <li><a href="{{ url('/category/club/liverpool') }}">Liverpool</a></li>
-                                                                                        <li><a href="{{ url('/category/club/manutd') }}">Man United</a></li>
-                                                                                        <li><a href="{{ url('/category/club/manutd') }}">Manchester City</a></li>
+                                                                                        <li><a href="{{ url('/category/club/man-utd') }}">Man United</a></li>
+                                                                                        <li><a href="{{ url('/category/club/man-city') }}">Manchester City</a></li>
                                                                                 </ul>
                                                                         </div>
                                                                         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
