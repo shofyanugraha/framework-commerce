@@ -25,7 +25,7 @@ mix.scripts([
     'node_modules/magnify/dist/js/jquery.magnify.js',
     'node_modules/jquery-validation/dist/jquery.validate.min.js',
     'node_modules/js-storage/js.storage.min.js',
-    'node_modules/@fengyuanchen/datepicker/dist/datepicker.min.js',
+    'node_modules/bootstrap-datepicker/js/bootstrap-datepicker.js',
     'public/js/jquery.downCount.js',
     'public/js/parallax.min.js',
     'public/js/app.js'], 'public/js/customize.js').version();

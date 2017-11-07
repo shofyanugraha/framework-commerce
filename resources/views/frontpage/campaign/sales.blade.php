@@ -114,24 +114,10 @@
 
                 </div>
             </div>
+
         </div>
     </div>
-</div>
-<div class="fixed hidden-md hidden-lg" style="    position: fixed;
-    bottom: 0;
-    width: 100%;">
-    <div class="col-xs-6" style="padding:0">
-        <a class="btn btn-block btn-danger">
-            <i class="fa fa-shopping-cart"></i>
-            Beli Sekarang
-        </a>
-    </div>
-    <div class="col-xs-6"  style="padding:0">
-        <a class="btn btn-block btn-success">
-            <i class="fa fa-whatsapp"></i>
-            Chat Sekarang
-        </a>
-    </div>
+
 </div>
 <div class="separator">
     <div class="container">
@@ -155,7 +141,7 @@
                                     $res = $data->whatsapp;
                                 }
                             @endphp
-                            <a href="https://api.whatsapp.com/send?phone={{ $res }}&text=Saya tertarik dengan Produk {{ $data->name }}" target="_blank">
+                            <a href="https://api.whatsapp.com/send?phone={{ $res }}&text=Saya tertarik dengan Produk {{ $data->name }}" target="_blank" class="chatToWA">
                                 <i class="fa fa-whatsapp"></i>
                                 <span>Chat Sekarang</span>
                             </a>
@@ -182,6 +168,28 @@
         </div>
     </div>
 </div>
+@if($data->status->number !=0)
+<div class="fixed hidden-md hidden-lg" style="
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;;
+    width: 100%;
+  ">
+    <div class="col-xs-6" style="padding:0">
+        <a class="btn btn-block btn-danger add2cartMobile">
+            <i class="fa fa-shopping-cart"></i>
+            Beli Sekarang
+        </a>
+    </div>
+    <div class="col-xs-6"  style="padding:0">
+        <a class="btn btn-block btn-success chatToWAMobile">
+            <i class="fa fa-whatsapp"></i>
+            Chat Sekarang
+        </a>
+    </div>
+</div>
+@endif
 @endsection
 
 @section('scripts')
@@ -331,6 +339,16 @@
                     centsLimit: 0,
                     thousandsSeparator: '.'
                 });
+            });
+            $('.add2cartMobile').click(function(e){
+                e.preventDefault();
+                $('#product-form').trigger('submit');
+            });
+
+            $('.chatToWAMobile').click(function(e){
+                e.preventDefault();
+                var ahref = $('.chatToWA').attr('href');
+                window.location.href = ahref;
             });
         });
 
@@ -534,6 +552,5 @@
 
         };
     </script>
-
-
+    
 @endsection

@@ -61,8 +61,6 @@
             });
 
             $('[data-toggle="datepicker"]').datepicker({
-                autoHide: true,
-                endDate: new Date(),
                 format: 'dd-mm-yyyy'
             });
             $('#form-confirmation').validate({
