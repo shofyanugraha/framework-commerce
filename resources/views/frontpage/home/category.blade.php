@@ -30,7 +30,11 @@
 									<a href="{{ url($product->slug) }}"><img src="{{ isset($product->details[0]->front_image) ? $product->details[0]->front_image->item->thumb : '' }}" class="img-responsive"></a>
 								</div>
 								<div class="product-title h4"><a href="{{ $product->slug }}">{{ $product->name}}</a></div>
-								<div class="product-price">Rp {{ isset($product->details[0]->sale_price) ? number_format($product->details[0]->sale_price, 0, ',', '.') : '' }}</div>
+								<div class="product-price">Rp {{ isset($product->details[0]->sale_price) ? number_format($product->details[0]->sale_price, 0, ',', '.') : '' }}
+								@if($product->details[0]->display_price > $product->details[0]->sale_price)
+	                                <span class="displayPrice">Rp {{ number_format($product->details[0]->display_price, 0, ',', '.') }}</span>
+	                            @endif
+		                        </div>
 							</div>
 						</div>
 					@empty

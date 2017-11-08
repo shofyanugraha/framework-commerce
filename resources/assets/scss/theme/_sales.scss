@@ -19,6 +19,12 @@
         font-family: 'Montserrat', sans-serif;
         color:#dc2e27;
         font-size:20px;
+        .displayPrice{
+            text-decoration: line-through;
+            color: #000;
+            font-size: 12px;
+            vertical-align: super;
+        }
     }
     //desc
     .description{

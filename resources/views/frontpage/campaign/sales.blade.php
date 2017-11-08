@@ -55,7 +55,11 @@
                         <input type="hidden" name="qty" value="1">
                         <div class="product-description">
                             <h2 class="title">{{ $data->name }}</h2>
-                            <p class="priceformat price">{{ $data->details[0]->sale_price }}</p>
+                            <p class="price"><span class="priceformat">{{ $data->details[0]->sale_price }}</span> 
+                                @if($data->details[0]->display_price > $data->details[0]->sale_price)
+                                <span class="priceformat displayPrice">{{ $data->details[0]->display_price}}</span>
+                                @endif
+                            </p>
                                 <div class="color-holder clearfix">
                                     <label>Pilih Warna</label><br/>
                                     @foreach($data->details as $detail)
