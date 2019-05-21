@@ -2,40 +2,30 @@
 
 namespace App;
 
-use Laravel\Spark\User as SparkUser;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends SparkUser
+class User extends Authenticatable
 {
+    use Notifiable;
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name',
-        'email',
+        'name', 'email', 'password',
     ];
 
     /**
-     * The attributes excluded from the model's JSON form.
+     * The attributes that should be hidden for arrays.
      *
      * @var array
      */
     protected $hidden = [
-        'password',
-        'remember_token',
-        'authy_id',
-        'country_code',
-        'phone',
-        'card_brand',
-        'card_last_four',
-        'card_country',
-        'billing_address',
-        'billing_address_line_2',
-        'billing_city',
-        'billing_zip',
-        'billing_country',
-        'extra_billing_information',
+        'password', 'remember_token',
     ];
 
     /**
@@ -44,7 +34,6 @@ class User extends SparkUser
      * @var array
      */
     protected $casts = [
-        'trial_ends_at' => 'datetime',
-        'uses_two_factor_auth' => 'boolean',
+        'email_verified_at' => 'datetime',
     ];
 }

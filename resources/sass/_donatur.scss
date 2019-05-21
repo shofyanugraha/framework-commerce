@@ -1,0 +1,14 @@
+.list-donatur {
+	display: flex;
+	align-items: center;
+	padding: 1rem;
+	&__item{
+		width: 75%;
+	}
+}
+.content-donatur{
+	&:first-child,
+	&:nth-child(2){
+		border-top: none !important;
+	}
+}

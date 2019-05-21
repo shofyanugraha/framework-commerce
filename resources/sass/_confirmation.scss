@@ -1,0 +1,21 @@
+
+.main-content{
+	margin: 5rem 0;
+}
+
+.sc-title{
+	margin: 0 0 1em;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    padding-bottom: 1rem;
+    position: relative;
+	&:after {
+	    width: 50px;
+	    height: 5px;
+	    background-color: #299caf;
+	    display: block;
+	    content: "";
+	    position: absolute;
+	    bottom: 0;
+	}
+}
