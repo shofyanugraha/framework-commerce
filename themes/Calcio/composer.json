@@ -1,0 +1,13 @@
+{
+    "name": "vendor/calcio",
+    "description": "Calcio theme.",
+    "type": "caffeinated-theme",
+    "autoload": {
+        "psr-4": {
+            "Themes\\Calcio\\": "src/"
+        }
+    },
+    "require": {
+        "caffeinated/composer": "*"
+    }
+}

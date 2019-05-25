@@ -1,0 +1,53 @@
+.navbar-nav{
+	.nav-link{
+		text-transform: uppercase;
+	}
+}
+.navbar-dark {
+	.navbar-nav{
+		.nav-link{
+			color: #fff;
+			&:focus, &:hover{
+				color: $warning;
+			}
+		}
+	}
+}
+.value-index{
+	.media{
+		h5{
+			font-weight: bold;
+			font-size: .7rem;
+		}
+	}
+}
+.owl-theme{
+	.owl-nav{
+		position: absolute;
+		right: 0;
+		top: -85px;
+
+	}
+}
+.header-section{
+	.header-title{
+		font-weight: bold;
+	}
+	p{
+		font-size: .7rem
+	}	
+}
+
+.product-item-price{
+	s{
+		font-size: .7rem;
+	}
+}
+
+.footer-widget{
+	h5{
+		font-weight: bold;	
+		font-size: 1rem;
+	}
+	
+}
