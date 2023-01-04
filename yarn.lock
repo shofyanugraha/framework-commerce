@@ -3559,23 +3559,11 @@ jquery-countdown@^2.2.0:
   version "2.2.0"
   resolved "git+https://github.com/flaviosilveira/Jquery-Price-Format.git#a472489b639e1f83e9a7892e60dd9723d96e3c67"
 
-jquery-steps@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/jquery-steps/-/jquery-steps-1.1.0.tgz#0ceee0b0d2e49143981ad120d458ed56ea8e1924"
-  integrity sha1-DO7gsNLkkUOYGtEg1FjtVuqOGSQ=
-
-jquery.steps@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/jquery.steps/-/jquery.steps-1.0.1.tgz#2e13bea4d8e892bfa5162ec80575265a323fa52c"
-  integrity sha512-FWcpJ0FVn3SjzgmUWT+OOxKLC3OVhS10BYHeBNTcHrqpvu7SMieq1WRTJQxRiOiBOhu+dNvHZyK/trYiUKC0Cg==
-  dependencies:
-    jquery "^3.2.1"
-
 jquery@>=1.7.0:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
 
-jquery@>=1.8.3, jquery@^3.2, jquery@^3.2.1, jquery@^3.3.1:
+jquery@>=1.8.3, jquery@^3.2, jquery@^3.3.1:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.4.1.tgz#714f1f8d9dde4bdfa55764ba37ef214630d80ef2"
   integrity sha512-36+AdBzCL+y6qjw5Tx7HgzeGCzC81MDDgaUP8ld2zhx58HdqXGoBd+tHdrBMiyjGQs0Hxs/MLZTu/eHNJJuWPw==
@@ -3644,11 +3632,9 @@ json5@^0.5.0:
   resolved "https://registry.yarnpkg.com/json5/-/json5-0.5.1.tgz#1eade7acc012034ad84e2396767ead9fa5495821"
 
 json5@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/json5/-/json5-2.1.0.tgz#e7a0c62c48285c628d20a10b85c89bb807c32850"
-  integrity sha512-8Mh9h6xViijj36g7Dxi+Y4S6hNGV96vcJZr/SrlHh1LR/pEn/8j/+qIBbs44YKl69Lrfctp4QD+AdWLTMqEZAQ==
-  dependencies:
-    minimist "^1.2.0"
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.3.tgz#78cd6f1a19bdc12b73db5ad0c61efd66c1e29283"
+  integrity sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==
 
 jsonfile@^4.0.0:
   version "4.0.0"
